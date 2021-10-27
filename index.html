@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções Javascript</title>
+    </head>
+    <body>
+        <h1>FUNÇÕES JAVASCRIPT</h1>
+        <p>
+            Funções são definidas pela palavra-chave "function" <br>
+            Funções são <b>objetos</b> <br>
+            Funções possuem <b>propriedades</b> e <b>métodos</b>: <br>
+            <h2>PROPRIEDADES DE UMA FUNÇÃO</h2>	<br>
+                ex: "arguments.length": <br>
+                    function myFunction(a, b) { <br>
+                    return arguments.length; <br>
+                    } <br>
+                    console.log(myFunction(4, 3)); 		//Irá retornar "2" no console <br>
+
+
+            <h2>MÉTODOS DE UMA FUNÇÃO</h2> <br>
+                ex ".toString()": <br>
+                    function myFunction(a, b) { <br>
+                    return a * b; <br>
+                    } <br>
+                    console.log( myFunction.toString() );	//Irá retornar "function myFunction(a, b) { return a * b; }" no console <br>
+        <p>
+        <h2>Function Declaration</h2>
+        <p>
+            Funções declaradas não são executadas imediatamente <br>
+            São executadas apenas quando invocadas <br>
+            Visto que uma "Function Declaration" não é um "executable statement", não é comum terminá-la com um ponto e vírgula. <br>
+            ex: <br>
+            function functionName(parametros) { <br>
+            // código... <br>
+            } <br>
+        </p>
+
+        <h2>Function Expression</h2>
+        <p>
+            Uma expressão de função pode ser armazenada em uma variável <br>
+            A variável pode então ser usada como uma função <br>
+            A variável será usada para invocar a função, por isso a função não precisará de um nome para identificá-la, sendo assim uma função anônima <br>
+            Function Expression terminam com ponto e vírgula por fazerem parte de um "executable statement" (instrução executável) <br>
+            ex: <br>
+            const a = function (x, y) {return x * y}; <br>
+            let b = a(4, 3); <br>
+        
+            <h3>SELF-INVOKING FUNCTIONS</h3>
+            -Uma "self invoking function" é invocada automaticamente, sem ser chamada. <br>
+            -Only Function Expressions can be self-invoked <br>
+            -Function Declarations cannot be self-invoked <br>
+            -Precisa-se adicionar parênteses em volta da função para indicar que é uma "function expression" <br>
+            -A função deve ser seguida de parênteses <br>
+            -Exemplo com uma "anonymous self-invoking function": <br>
+                (function () {		→ Parênteses envolvendo a função <br>
+                let x = "Hello World !"; <br>
+                })();			→ Parênteses após a função <br>
+
+        
+            <h3>ARROW FUNCTIONS</h3>
+                -Permitem uma sintaxe menor para escrever "function expressions" <br>
+                -Não são necessários as palavras-chave FUNCTION, RETURN e as CHAVES <br>
+                -ex: <br>
+                // <b>Declaração padrão</b> <br>
+                var x = function(x, y) { <br>
+                return x * y; <br>
+                } <br>
+
+                // <b>Arrow Function</b> <br>
+                const x = (x, y) => x * y; <br>
+
+                -As arrow functions não têm o this. <br>
+                -Elas não são adequadas para definir métodos de um objeto. <br>
+                -As arrow functions não são içadas ( not hoisted ), ou seja, elas devem ser definidas antes de serem usadas. <br>
+                -Usar "const" é mais seguro do que usar "var", porque uma function expression é sempre um valor constante. <br>
+                -A palavra-chave RETURN e as CHAVES só podem ser omitidas se a função for uma única instrução ( sigle statement), por isso, é uma boa prática usá-las sempre <br>
+                ∟ex: const x = (x, y) => { return x * y }; <br>
+        </p>
+                
+
+
+        <h2>Anonymous Function</h2>
+            São as funções que não possuem nenhum nome <br>
+            Funções armazenadas em variáveis não precisam de nomes, já que são sempre invocadas usando o próprio nome da variável. <br>
+
+
+        <h2>Function() Contructor</h2>
+            Funções também podem ser definidas com o construtor "Function()" <br>
+            Não é necessário o uso desse construtor <br>
+            ex: <br>
+            const myFunction = new Function("a", "b", "return a * b"); <br>
+            let x = myFunction(4, 3); <br>
+
+            ex: <br>
+            const myFunction = function (a, b) {return a * b}; <br>
+            let x = myFunction(4, 3); <br>
+
+
+
+
+
+
+        <h2>BIZU</h2>
+        <p>
+            • Funções podem ser usadas como valores e em expressões <br>
+                ex: <br>
+                    function myFunction(a, b) { <br>
+                    return a * b; <br>
+                    } <br>
+                    let x = myFunction(4, 3);	→Usada como valor <br>
+                    console.log(x);		→Será mostrado 12 no console <br>
+
+                ex: <br>
+                    function myFunction(a, b) { <br>
+                    return a * b; <br>
+                    } <br>
+                    let x = myFunction(4, 3) * 2;	→Usada como valor em uma expressão <br>
+                    console.log(x);		→Será mostrado 24 no console <br>
+        </p>
+
+        <h1>FUNCTION PARAMETERS / FUNCTION ARGUMENTS</h1>
+        <p>
+            ex: <br>
+            function functionName(parameter1, parameter2, parameter3){ <br>
+                // code to be executed <br>
+            } <br>
+        </p>
+
+
+        <h2>Parâmetros</h2>
+        <p>
+            São os nomes listados na declaração da função <br>
+            
+            <h3>Regras para Parâmetros</h3>
+                ∟JavaScript function definitions do not specify data types for parameters. <br>
+                ∟As funções JavaScript não verificam o tipo dos argumentos passados. <br>
+                ∟As funções JavaScript não verificam o número de argumentos recebidos. <br>
+
+            <h3>Parâmetros Padrão</h3>
+                Se uma função for chamada com argumentos faltando (menos do que declarado), os valores ausentes serão considerados como "undefined" <br>
+                Às vezes, isso é aceitável, mas normalmente é melhor atribuir um valor padrão ao parâmetro <br>
+                ex: <br>
+                    function myFunction(x, y) { <br>
+                    if (y === undefined) { <br>
+                        y = 2; <br>
+                    } <br>
+                    return x * y; <br>
+                    } <br>
+                    console.log( myFunction(4) );		//Função invocada com apenas 1 parâmetro, enquanto ela possui dois <br>
+        </p>
+
+        <h2>Argumentos</h2>
+        <p>
+            ∟São os verdadeiros valores passados e recebidos pela função <br>
+
+            ∟Arguments Object <br>
+                -As funções JavaScript têm um objeto interno denominado "arguments object" <br>
+                -O "argument object" contém um array dos argumentos usados quando a função foi invocada. <br>
+                -Se uma função for invocada com mais argumentos do que foram declarados, esses argumentos a mais podem ser alcançados através do "arguments object" <br>
+
+            ∟Os "argumentos" são passados por valor <br>
+                -Quando uma função for chamada, os parâmetros serão os argumentos dela <br>
+                -Os argumentos JavaScript são passados por valor: a função só conhece os valores e não a localização dos argumentos. <br>
+                -Se uma função altera o valor de um argumento o valor original do parâmetro não será alterado. <br>
+                -<b>Alterações nos argumentos NÃO são visíveis fora da função.</b> <br>
+
+            ∟Os "Objects" são passados por referência <br>
+                -No javascript, "Object References" são valores, por causa disso, objects vão se comportar como se fossem passados por referência <br>
+                -Se uma função altera o valor de uma propriedade do object, ela irá alterar o valor original <br>
+                -<b>Alterações nas propriedades do object SÃO visíveis fora da função</b> <br>
+        </p>
+
+        <h1>Palavra-chave THIS</h1>
+        <p>
+            No JavaScript todas as funções são métodos, que pertencem a algum objeto, caso não pertencam a um objeto específico, pertencerão ao objeto global (global object) <br>
+                ∟Nesse sentido, a palavra chave "this" se refere ao "dono" dessa função, ou seja, o objeto que é o proprietário da função <br>
+
+            O "this" quando usado em uma função irá representar o objeto que "possui" essa função. <br>
+                ∟"this" não é uma variável <br>
+                ∟"this" é uma palavra-chave, da qual você não pode mudar o valor <br>
+
+            When a function is called without an owner object, the value of "this" becomes the global object. <br>
+            Em um navegador da web, o global object é a janela do browser. <br>
+            ex: <br>
+                &#60body> <br>
+                    &#60script> <br>
+                        let x = myFunction(); <br>
+                        function myFunction() { <br>
+                        return this; <br>
+                        } <br>
+                        console.log(x);  //Retornará [object Window] <br>
+                    &#60/script> <br>
+                &#60/body> <br>
+
+
+            Invocar uma função como uma "global function" faz com que o valor de "this" seja o global object. <br>
+            Usar o window object como uma variável pode facilmente travar seu programa. <br>
+        </p>
+
+        <h1>INVOCAÇÃO DE FUNÇÕES JAVASCRIPT</h1>
+        <p>
+            O código dentro de uma função não é executado quando a função é definida, mas sim quando a função é invocada. <br>
+            É comum usar o termo "chamar uma função (call a function)" em vez de "invocar uma função (invoke a function)". <br>
+            Será usado o termo invocar, pois uma função JavaScript pode ser invocada sem ser chamada. <br>
+
+            ex: <br>
+            &#60body> <br>
+                &#60script> <br>
+                    function myFunction(a, b) { <br>
+                    return a * b; <br>
+                    } <br>
+                    var x = myFunction(10, 2)		 <br>
+                    var y = window.myFunction(10, 2)	//"x" e "y" recebem o mesmo valor <br>
+                    console.log(x); 	<br>
+                    console.log(y);<br>
+                &#60/script><br>
+            &#60/body><br>
+
+
+            A função acima não pertence a nenhum objeto. Mas em JavaScript SEMPRE HAVERÁ como padrão o "global object" <br>
+            O "global object" padrão é a própria página HTML, portanto, a função acima pertence à página HTML.<br>
+            In a browser the page object is the browser window. The function above automatically becomes a window function. <br>
+            myFunction() e window.myFunction() são a mesma função <br>
+        </p>
+
+        <h2>INVOCANDO UMA FUNÇÃO COMO UM MÉTODO</h2>
+        <p>
+            • No JavaScript você pode definir funções como sendo métodos de um objeto. <br>
+            • ex: Criar um objeto (myObject), com duas propriedades(firstName e lastName) e um método(fullName) <br>
+                const myObject = { <br>
+                firstName:"John", <br>
+                lastName: "Doe", <br>
+                fullName: function() { <br>
+                    return this.firstName + " " + this.lastName;<br>
+                } <br>
+                } <br>
+                var x = myObject.fullName(); <br>
+                console.log(x);		//John Doe <br>
+
+            • O método fullName é uma função. A função pertence ao objeto "myObject", que é o "proprietário" da função.	 <br> 
+            • A palavra-chave this se refere ao objeto que "possui" o código, nesse caso, o valor de this será "myObject" <br>
+            • Invocar uma função como um método de um objeto faz com que o valor da palavra-chave "this" seja o próprio objeto onde a função foi invocada. <br>
+        </p>
+
+        <h2>INVOCANDO UMA FUNÇÃO COM UM "FUNCTION CONSTRUCTOR"</h2>
+        <p>
+            • Quando uma função for invocada e for precedida pela palavra "new", essa será uma "constructor invocation" <br>
+            • Funções Javascript são objetos, então, mesmo que pareca que uma nova função está sendo criada, na realidade é um objeto que está sendo criado <br>
+            • Uma invocação do construtor (constructor invocation) cria um novo objeto, esse novo objeto herda as propriedades e métodos do seu construtor. <br>
+            • A palavra-chave "this" no construtor não possui um valor. <br>
+            • O valor de "this" será o novo objeto criado quando a função for chamada. <br>
+        </p>
+
+        <h1>MÉTODO "CALL()"</h1>
+        <p>
+            O método call() é um método predefinido pelo Javascript <br>
+            
+            O método call() pode ser usado para invocar uma função(método), com um "owner object" sendo usado como argumento (parâmetro). <br>
+            Com o call(), um objeto pode usar métodos pertencentes a outro objeto <br>
+            ex: <br> 
+                const person = { <br>
+                fullName: function() { <br>
+                    return this.firstName + " " + this.lastName; <br>
+                } <br>
+                } <br>
+
+                const person1 = { <br>
+                firstName:"John", <br>
+                lastName: "Doe" <br>
+                } <br>
+                const person2 = { <br>
+                firstName:"Mary", <br>
+                lastName: "Doe" <br>
+                } <br>
+                var x = person.fullName.call(person1); <br>
+                console.log(x); <br>
+            
+
+            O método call() aceita argumentos <br>
+            ex: <br>
+                const person = { <br>
+                fullName: function(city, country) { <br>
+                    return this.firstName + " " + this.lastName + "," + city + "," + country; <br>
+                } <br>
+                } <br>
+
+                const person1 = { <br>
+                firstName:"John", <br>
+                lastName: "Doe" <br>
+                } <br>
+
+                const person2 = { <br>
+                firstName:"Mary", <br>
+                lastName: "Doe" <br>
+                } <br>
+                var x = person.fullName.call(person1, "Contagem", "Brasil"); 		//Argumentos <br>
+                console.log(x)						// John Doe, Contagem, Brasil <br>
+        </p>
+	
+        <h1>Método Apply()</h1>
+        <p>
+            O método apply() é similar ao método call() <br>
+            A grande diferença está no fato de que: <br>
+                ∟O método call() aceita os argumentos SEPARADAMENTE; <br>
+                ∟O método apply() aceita os argumentos como um ARRAY <br>
+
+
+            ex: método call() <br>
+                const person = { <br>
+                fullName: function(city, country) { <br>
+                    return this.firstName + "," + city + "," + country; <br>
+                } <br>
+                } <br>
+                const person1 = { <br>
+                firstName:"João", <br>
+                lastName: "Machado" <br>
+                } <br>
+                document.getElementById("demo").innerHTML = person.fullName.apply(person1, "Contagem", "Brasil"); 	//Argumentos separados <br>
+
+            ex: método apply() <br>
+                const person = { <br>
+                fullName: function(city, country) { <br>
+                    return this.firstName + "," + city + "," + country; <br>
+                } <br>
+                } <br>
+                const person1 = { <br>
+                firstName:"João", <br>
+                lastName: "Machado" <br>
+                } <br>
+                document.getElementById("demo").innerHTML = person.fullName.apply(person1, ["Contagem", "Brasil"]); 	//Argumento em array <br>
+
+
+            <h2>Simular o método max() em arrays</h2>
+                Você pode encontrar o maior número em uma lista de números usando o método Math.max(): <br>
+                Os arrays JavaScript não têm um método max() <br>
+                ex: <br>
+                    document.getElementById("demo").innerHTML = Math.max.apply(null, [1,2,3]); 	→Irá retornar 3  <br>
+
+                O primeiro argumento (null) não importa, ja que não é usado nesse caso. <br>
+                    ∟Também pode ser escrito como <br>
+                            Math.max.apply(Math, [1,2,3]); <br>
+                                Math.max.apply(" ", [1,2,3]); <br>
+                            Math.max.apply(0, [1,2,3]); <br> 
+
+
+            <h2>JAVASCRIPT STRICT MODE</h2>
+                No "strict mode", se o primeiro argumento do método apply() não for um objeto, o método apply() se tornará o proprietário (objeto) da função invocada.<br>
+                No "non-strict" mode o global object se torna o proprietário da função <br>
+        </p>   
+        
+        <h1>Escopo e Function CLOSURES</h1>
+        <p>
+            Uma função pode acessar todas as variáveis definidas dentro dela mesma <br>
+                ∟Exemplo <br>
+                    function myFunction () { <br>
+                    let a = 4;		//Nesse caso "a" é uma variável local <br>
+                    return a * a; <br>
+                    } <br>
+
+            Uma função também pode acessar variáveis definidas fora da função: <br>
+                ∟Exemplo <br>
+                    let a = 4;			//Nesse caso "a" é uma variável global <br>
+                    function myFunction () { <br>
+                    return a * a; <br>
+                    } <br>
+
+            • <b>Variável Global</b>: São acessíveis a todos os escopos <br>
+                ∟Variáveis globais podem ser feitas locais (privadas) com closures. <br>
+                ∟Variáveis criadas sem palavra-chave (var, let ou const) são sempre globais, mesmo se forem criadas dentro de uma função. <br>
+                    Exemplo <br>
+                    function myFunction() { <br>
+                    a = 4;			→Será considerada uma variável global <br>
+                    } <br>
+            • <b>Variável Local</b>: Uma variável local só pode ser usada dentro da função onde está definida. <br>
+
+                *Variáveis globais e locais com o mesmo nome são consideradas como variáveis diferentes. Modificar um não altera a outra. <br>
+
+            <h2>Tempo de vida das variáveis</h2>
+                ∟Variáveis globais são descartadas assim que você navega para outra página ou fecha a janela. <br>
+                ∟Variáveis locais são criadas quando a função é chamada e descartadas quando a função é concluída. <br>
+
+
+            <h2>Um problema do Contador</h2>
+                • Suponha que você queira usar uma variável para contar algo e que esse contador esteja disponível para todas as funções do programa <br>
+                
+                Você pode usar uma variável global e uma função para aumentar o contador <br>
+                ex: 1.jpg <br>
+                O problema com essa solução é que qualquer código na página pode alterar o contador, sem chamar o add(). <br>
+
+                O contador deve ser local para a função add (), para prevenir que outros códigos o altere: <br>
+                ex: 2.jpg <br>
+                Não funcionou porque exibimos o contador global em vez do contador local. <br>
+
+                Podemos remover o contador global e acessar o contador local, permitindo que a função o retorne: <br>
+                ex: 3.jpg <br>
+                Não funcionou porque zeramos o contador local toda vez que chamamos a função. <br>
+            
+                Uma função interna do JavaScript pode resolver isso (Inner Function) <br>
+
+
+            <h2>NESTED FUNCTIONS</h2>
+            <p>
+                • Todas as funções têm acesso ao escopo global. <br>
+                • Na verdade, no JavaScript, todas as funções têm acesso ao escopo "acima" delas. <br>
+                • O JavaScript oferece suporte a nested functions (funções aninhadas). <br>
+                • As funções aninhadas têm acesso ao escopo "acima" delas. <br>
+                Exemplo: 'a função interna plus() tem acesso a variável do contador na parent function' <br>
+
+                document.getElementById("demo").innerHTML = add(); <br>
+                function add() { <br>
+                let counter = 0; <br>
+                function plus() {counter += 1;} <br>
+                plus();   <br>
+                return counter;  <br>
+                } <br>
+
+                • Isso poderia ter resolvido o problema do contador, se pudéssemos alcançar a função plus() de fora. <br>
+                • Também precisamos encontrar uma maneira de executar o counter = 0 apenas uma vez. <br>
+                • Para isso será necessário uma "closure" <br>
+
+            <h2>JAVASCRIPT CLOSURES</h2>
+                ex: <br>
+                    &#60body> <br>
+                    &#60button type="button" onclick="myFunction()">Count!&#60/button> <br>
+                    &#60p id="demo">0&#60/p> <br>
+                    &#60script> <br>
+                        const add = (function () { <br>
+                        let counter = 0; <br>
+                        return function () {counter += 1; return counter;} <br>
+                        })(); <br>
+
+                        function myFunction(){ <br>
+                        document.getElementById("demo").innerHTML = add(); <br>
+                        } <br>
+                    &#60/script> <br>
+                    &#60/body> <br>
+
+                A variável add() é atribuída ao valor de retorno de uma self-invoking function. <br>
+                A self-invoking function é executada apenas uma vez. Ela define o contador para zero 0 e retorna uma function expression. <br>
+                Desta forma, "add" torna-se uma função. O benefício é que ela pode acessar o contador no parent scope. <br>
+                Isso é chamado de javascript enclosure, e torna possível que uma função tenha variáveis "privadas". <br> 
+                O contador é protegido pelo escopo da função anônima e só pode ser alterado usando-se a função add. <br>
+
+    </body>
+</html>
