@@ -1,201 +1,429 @@
 <!DOCTYPE html>
-<html>
+<html lang='eng'>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
         <title>Funções Javascript</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <!-- myGlobalCSS -->
+        <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/myGlobalCSS.css" >
+        <link rel="stylesheet" type="text/css" href="style.css" >
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>FUNÇÕES JAVASCRIPT</h1>
-        <p>
-            Funções são definidas pela palavra-chave "function" <br>
-            Funções são <b>objetos</b> <br>
-            Funções possuem <b>propriedades</b> e <b>métodos</b>: <br>
-            <h2>PROPRIEDADES DE UMA FUNÇÃO</h2>	<br>
-                ex: "arguments.length": <br>
-                    function myFunction(a, b) { <br>
-                    return arguments.length; <br>
-                    } <br>
-                    console.log(myFunction(4, 3)); 		//Irá retornar "2" no console <br>
+        <div class="container-xxl px-4">
+            <h1 class="initialTitle">Funções em Javascript</h1>
+            <p>
+                Funções são definidas pela palavra-chave "function" <br>
+                Funções são <b>objetos</b>
+            </p>
+            <hr>
+        </div>
 
+        <div class="container-xxl">
+            <div class="bd-content">
+                <div class="boundingLines"></div>
+                <h1 class="px-4"><mark class="lineText">Propriedades e Métodos</mark></h1>
+                <div class="px-4 py-3">
+                    <p class="px-4 fs-4">• Funções possuem <b>propriedades</b> e <b>métodos</b>:</p><br>
+                    <div class="px-4 py-4">
+                        <h2 class="pb-4"><b class="red">Propriedades</b> de uma Função</h2>
+                        <p class="px-4 fs-4">• <b>Exemplo:</b> Propriedade <code class="inlineCodeTag">.length</code></p>
+                        <div class="px-4">
+                            <pre class="px-4 preTag fs-6">
+                                <code>
+function myFunction(a, b) {
+    return arguments<b>.length</b>;
+}
+console.log(myFunction(4, 3)); //Será retornado "2" no console    
+                                </code>
+                            </pre>
+                        </div>
+                        <br><hr>
+                    </div>
 
-            <h2>MÉTODOS DE UMA FUNÇÃO</h2> <br>
-                ex ".toString()": <br>
-                    function myFunction(a, b) { <br>
-                    return a * b; <br>
-                    } <br>
-                    console.log( myFunction.toString() );	//Irá retornar "function myFunction(a, b) { return a * b; }" no console <br>
-        <p>
-        <h2>Function Declaration</h2>
-        <p>
-            Funções declaradas não são executadas imediatamente <br>
-            São executadas apenas quando invocadas <br>
-            Visto que uma "Function Declaration" não é um "executable statement", não é comum terminá-la com um ponto e vírgula. <br>
-            ex: <br>
-            function functionName(parametros) { <br>
-            // código... <br>
-            } <br>
-        </p>
+                    <div class="px-4 py-4">
+                        <h2 class="pb-4"><b class="red">Métodos</b> de uma Função</h2>
+                        <p class="px-4 fs-4">• <b>Exemplo:</b> Método <code class="inlineCodeTag">.toString()</code></p>
+                        <div class="px-4">
+                            <pre class="preTag px-4">
+                                <code>
+function myFunction(a, b) {
+return a * b;
+}
+console.log( myFunction.toString() );	//Irá retornar "function myFunction(a, b) { return a * b; }" no console
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <h2>Function Expression</h2>
-        <p>
-            Uma expressão de função pode ser armazenada em uma variável <br>
-            A variável pode então ser usada como uma função <br>
-            A variável será usada para invocar a função, por isso a função não precisará de um nome para identificá-la, sendo assim uma função anônima <br>
-            Function Expression terminam com ponto e vírgula por fazerem parte de um "executable statement" (instrução executável) <br>
-            ex: <br>
-            const a = function (x, y) {return x * y}; <br>
-            let b = a(4, 3); <br>
+        <div class="container-xxl">
+            <div class="bd-content">
+                <div class="boundingLines"></div>
+                <h1 class="px-4"><mark class="lineText">Declaration vs Expression</mark></h1>
+                <div class="px-5 py-3">
+                    <h2 class="pb-4">Function <b class="red">Declaration</b></h2>
+                    <ul>
+                        <li>Funções declaradas <b>NÃO</b> são <b>executadas imediatamente</b>; </li>
+                        <li>São executadas apenas quando <b>invocadas</b>;</li>
+                        <li>Function Declarations não são <b>executable statements</b>, não é comum terminá-los com <code class="inlineCodeTag">;</code></li>
+                        <p>Exemplo:
+                    </ul>
+                        <pre class="preTag px-4 fs-6">
+                            <code>
+function functionName(parâmetros) {
+    ...
+} //Sem uso de ;
+                            </code>
+                        </pre>
+                    <br><hr>
+                </div>
+                <div class="px-5 py-3">
+                    <h2 class="pb-4">Function <b class="red">Expression</b></h2>
+                    <ul>
+                        <li>Uma function expression pode ser <b>armazenada</b> em uma <b>variável</b>;</li> 
+                        <li>A variável poderá ser <b>usada</b> como uma <b>função</b>;</li>
+                            <ul>
+                                <li>A variável será usada para <b>invocar a função</b>;</li>
+                                <li>Por causa disso, a função não precisará de um nome para identificá-la;</li>
+                                <li>Uma função que não tem nome é chamada de <b>função anônima</b></li> 
+                            </ul>
+                        </li>
+                        <li>Function Expressions terminam com <code class="inlineCodeTag">;</code> pois fazem parte de um "executable statement". (instrução executável)</li> 
+                        <li>Uma function expression sempre terá um <b>valor constante</b>.</li>
+                            <ul><li>Portanto, usar "const" é mais seguro do que usar "var"</li></ul>
+                        <p>Exemplo:</p>
+                    </ul>
+                        <pre class="preTag px-4 fs-6">
+                            <code>
+const a = function (x, y) {return x * y};
+let b = a(4, 3);
+                            </code>
+                        </pre>
+                    <h3>Self-Invoking Functions</h3>
+                    <ul>
+                        <li>Uma <b>Self Invoking Function</b> é <b>INVOCADA AUTOMATICAMENTE</b>, sem ser chamada.</li>
+                        <li><b>APENAS</b> <b class="red">Function Expressions</b> podem ser invocadas automaticamente</li>
+                        <li><b class="red">Function Declarations</b> <b>NÃO PODEM</b> ser invocadas automaticamente</li>
+                        <li>Precisa-se adicionar parênteses em volta da função para indicar que é uma "function expression"</li>
+                        <li>A função deve ser seguida de parênteses</li>
+                    </ul>
+                    <p>Exemplo: Anonymous Self-invoking Function </p>
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+<b>(</b>function () {
+    let x = "Hello World !";
+}<b>)()</b>;
+
+//Note os parênteses envolvendo a função
+//Note os parênteses '()' após a função
+                        </code>
+                    </pre>
+
+                    <h3>Funções Anônimas</h3>
+                    <ul>
+                        <li>São as funções que <b>não possuem nome</b>;</li>
+                        <li>Funções armazenadas em variáveis não precisam de nomes
+                            <ul><li>Serão sempre invocadas usando o próprio nome da variável.</li></ul>
+                        </li>
+                    </ul>
         
-            <h3>SELF-INVOKING FUNCTIONS</h3>
-            -Uma "self invoking function" é invocada automaticamente, sem ser chamada. <br>
-            -Only Function Expressions can be self-invoked <br>
-            -Function Declarations cannot be self-invoked <br>
-            -Precisa-se adicionar parênteses em volta da função para indicar que é uma "function expression" <br>
-            -A função deve ser seguida de parênteses <br>
-            -Exemplo com uma "anonymous self-invoking function": <br>
-                (function () {		→ Parênteses envolvendo a função <br>
-                let x = "Hello World !"; <br>
-                })();			→ Parênteses após a função <br>
 
+
+                    <h3>Arrow Functions</h3>
+                    <ul>
+                        <li>Permitem uma sintaxe menor para escrever "function expressions" </li>
+                        <li>Não são necessários as palavras-chave FUNCTION, RETURN e as CHAVES </li>
+                    </ul>
+                    Exemplo: <b>Declaração Comum</b>
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+var x = function(x, y) {
+    return x * y;
+}
+                        </code>
+                    </pre>
+                    Exemplo: <b>Arrow Function</b>
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+const x = (x, y) => x * y;
+                        </code>
+                    </pre>
+                    <ul>
+                        <li>Arrow functions:</li>
+                        <ul>
+                            <li>Não têm <b>this</b>;</li>
+                            <li>Não são adequadas para definir <b>métodos de um objeto</b>;</li>
+                            <li>NOT HOISTED: <b>devem ser definidas antes de serem usadas</b>.</li>
+                        </ul>   
+                        <li>Quando a função for <b>single statement</b> ( tiver uma única instrução):
+                             <ul>
+                                <li>A palavra-chave <code class="inlineCodeTag">return</code> e <code class="inlineCodeTag">{ }</code> podem ser omitidas</li>
+                                <li>É uma boa prática usá-las sempre</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    Exemplo:
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+//return e { } omitidos
+const x = (x, y) => x * y;
+
+//Recomendado
+const x = (x, y) => { return x * y };
+                        </code>
+                    </pre>     
+                </div>
+            </div>
+        </div>
+
+        <div class="container-xxl">
+            <div class="bd-content">
+                <div class="boundingLines"></div>
+                <h1 class="px-4"><mark class="lineText">Function() Contructor</mark></h1>
+                <div class="px-4 py-3">
+
+                    <ul>
+                        <li>Funções também podem ser definidas com o construtor <code class="inlineCodeTag">Function()</code> </li>
+                        <li> O uso desse construtor é <b>opcional</b></li>
+                    </ul>
+                    Exemplo:
+                    <pre class="preTag">
+                        <code>
+    const myFunction = new Function("a", "b", "return a * b");
+    let x = myFunction(4, 3);
+                        </code>
+                    </pre>
         
-            <h3>ARROW FUNCTIONS</h3>
-                -Permitem uma sintaxe menor para escrever "function expressions" <br>
-                -Não são necessários as palavras-chave FUNCTION, RETURN e as CHAVES <br>
-                -ex: <br>
-                // <b>Declaração padrão</b> <br>
-                var x = function(x, y) { <br>
-                return x * y; <br>
-                } <br>
+                    Exemplo:
+                    <pre class="preTag">
+                        <code>
+    const myFunction = function (a, b) {return a * b};
+    let x = myFunction(4, 3);
+                        </code>
+                    </pre>
+                </div>
 
-                // <b>Arrow Function</b> <br>
-                const x = (x, y) => x * y; <br>
+            </div>
+        </div>
 
-                -As arrow functions não têm o this. <br>
-                -Elas não são adequadas para definir métodos de um objeto. <br>
-                -As arrow functions não são içadas ( not hoisted ), ou seja, elas devem ser definidas antes de serem usadas. <br>
-                -Usar "const" é mais seguro do que usar "var", porque uma function expression é sempre um valor constante. <br>
-                -A palavra-chave RETURN e as CHAVES só podem ser omitidas se a função for uma única instrução ( sigle statement), por isso, é uma boa prática usá-las sempre <br>
-                ∟ex: const x = (x, y) => { return x * y }; <br>
-        </p>
-                
+        <div class="container-xxl">
+            <div class="bd-content">
+                <h1 class="px-4 mb-5"><mark class="lineText">Bizu</mark></h1>
+                <div class="boundingLines"></div>
+                <div class="px-4">
+                    <ul class="px-5">
+                        <li>Funções podem ser usadas como <b>valores</b> e também <b>em expressões</b>.</li>
+                        <li>Exemplo como <b>valor</b>:</li>
+                    </ul>
+                    <div class="px-5">
+                    <pre class="preTag ps-4 fs-6">
+                        <code>
+function myFunction(a, b) {
+    return a * b;
+}
+let x = <b>myFunction(4, 3)</b>;	
+console.log(x);
+
+//Usada como valor
+//Resposta 12 no console</code>
+                    </pre>
+
+                    <ul>
+                        <li>Exemplo em uma <b>expressão</b>:</li>
+                    </ul>
+                    <pre class="preTag ps-4 fs-6">
+                        <code>
+function myFunction(a, b) {
+    return a * b;
+}
+let x = <b>myFunction(4, 3)</b> * 2;	
+console.log(x);		
+
+//Usada como valor em uma expressão
+//Resultado 24 no console</code>
+                    </pre>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-xxl">
+            <div class="bd-content">
+                <div class="boundingLines"></div>
+                <h1 class="px-4 mb-5"><mark class="lineText">Function Parameters / Function Arguments</mark></h1>
+                <div class="px-5">
+                    <!-- FUNCTION PARAMETERS -->
+                    <div class="subHeader">
+                        <h2><mark class="lineText">Function <b class="blue">Parameters</mark></b></h2>
+                        <div class="solidLine"></div>
+                    </div>
+                    <div class="px-5">
+                        <p>Exemplo:</p>
+                        <pre class="preTag px-4 fs-6">
+                            <code>
+function functionName(<b>parameter1, parameter2, parameter3</b>){
+    ...
+}
+                            </code>
+                        </pre>
+                        <ul>
+                            <li>São os <b>nomes</b> listados na <b class="red">declaração da função</b></li>
+                            <li>JavaScript function definitions do not specify data types for parameters.</li>
+                            <li>As Funções JavaScript:
+                                <ul>
+                                    <li>Não verificam o <b class="red">tipo</b> <b>dos argumentos</b> passados.</li>
+                                    <li>Não verificam o <b class="red">número</b> <b>de argumentos</b> recebidos.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h3>Default Parameter</h3>
+                        <ul>
+                            <li>Uma função pode ser chamada com <b>argumentos faltando</b> (menos do que foram declarados).</li>
+                                <ul>
+                                    <li>Os valores ausentes serão considerados como <code class="inlineCodeTag">undefined</code>;</li>
+                                    <li>Existem casos em que isso pode ser aceitável;</li>
+                                    <li>Contudo, no geral se <b>atribui</b> um valor <b>default</b> (predefinido) ao parameter.</li>
+                                </ul>
+                            </li>
+                            <li>Exemplo:</li>
+                        </ul>
+                        <pre class="preTag px-4 fs-6">
+                            <code>
+function <b>myFunction(x, y)</b> {
+if (y === undefined) { //Atribui o valor 2 como default a 'y', quando este for 'undefined'
+y = 2;
+}
+return x * y;
+}
+console.log( <b>myFunction(4)</b> );
+
+//Função possui 2 parameters mas é invocada com apenas 1 parameter
+//Resultado 8 no console
+                            </code>
+                        </pre>
+                    </div><br>
+
+                    <!-- FUNCTION ARGUMENTS -->
+                    <div class="subHeader">
+                        <h2 class="my-4"><mark class="lineText">Function <b class="blue">Arguments</b></mark></h2>
+                        <div class="solidLine"></div>
+                    </div>
+                    <div class="px-5">
+                        <ul>
+                            <li>São os <b>valores verdadeiros</b>;</li>
+                            <li>São os valores que realmente são <b>passados</b> e <b>recebidos</b> pela função.</li>
+                        </ul>
+                        <h3 class="my-5">O <code class="inlineCodeTag">Arguments</code> Object</h3>
+                        <ul>
+                            <li><code class="inlineCodeTag">arguments</code> é um <b>Object</b>, muito semelhante a um <b>array</b>.
+                                <ul>
+                                    <li>É um object interno das funções do Javascript;</li>
+                                    <li>Ele pode ser acessado dentro das funções;</li>
+                                    <li>Ele contêm os valores dos arguments passados para a função.</li>
+                                    <li>Uma função pode ser invocada com mais arguments do que foram declarados inicialmente</li>
+                                        <ul><li>Esses arguments "a mais" podem ser alcançados com o <code class="inlineCodeTag">arguments</code> object" </li></ul>
+                                </ul>
+                            </li>
+                            <li>Exemplo:</li>
+                        </ul>
+                        <pre class="preTag px-4 fs-6">
+                            <code>
+function func1(a, b, c) {
+    console.log(<b>arguments[0]</b>);
+    // output esperado: 1
+    
+    console.log(<b>arguments[1]</b>);
+    // output esperado: 2
+    
+    console.log(<b>arguments[2]</b>);
+    // output esperado: 3
+}
+    
+func1(1, 2, 3);
+                            </code>
+                        </pre>
+                        <ul>
+                            <li>
+                                Os <code class="inlineCodeTag">Arguments</code> são passados por <b>valor</b>
+                                <ul>
+                                    <li>Quando uma função for chamada, os parameters serão os argument dela </li>
+                                    <li>Os JavaScript Arguments são passados por valor: a função só conhece os valores e não a localização dos arguments.</li>    
+                                    <li>Quando uma função altera o valor de um argument o valor original do parameter NÃO é alterado;</li> 
+                                    <li>Alterações nos arguments <b>NÃO SÃO VISÍVEIS FORA</b> da função.</b></li> 
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Os <code class="inlineCodeTag">Objects</code> são passados por <b>referência</b>
+                                <ul>
+                                    <li>No javascript, <b>Object References</b> são valores, por causa disso, Objects vão se comportar como se fossem passados por referência</li>
+                                    <li>Se uma função altera o valor de uma propriedade do object, ela também vai alterar o valor original</li>
+                                    <li>Alterações nas propriedades do object <b>SÃO VISÍVEIS FORA</b> da função.</b>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-xxl">
+            <div class="bd-content">
+                <div class="boundingLines"></div>
+                <h1 class="px-4"><mark class="lineText">Palavra-chave <b class="gold">this</b></mark></h1>
+                <div class="px-5">
+                    <ul>
+                        <li>No JavaScript todas as funções são métodos, que pertencem a algum objeto</li>
+                        <li>As funções que não pertencem a um objeto específico, pertencem ao objeto global (global object)</li>    
+                    </ul>
+                    <ul>
+                        <li>Nesse sentido, <code class="inlineCodeTag">this</code> se refere ao <b>"dono"</b> dessa função, ou seja, o objeto que é o <b>proprietário</b> da função.
+                        <li>Propriedades do <code class="inlineCodeTag">this</code>:
+                            <ul>
+                                <li>Quando usado em uma função, representa o <b>object</b> que <b>possui</b> essa função;</li>
+                                <li>É uma palavra-chave, a qual <b>não</b> pode ter o seu <b>valor alterado</b>;</li>
+                                <li><b>Não</b> é uma variável.</li>
+                            </ul>
+                        </li>
+                        <li>When a function is called without an owner object, the value of "this" becomes the global object.</li>
+                        <li>Em um navegador da web, o global object é a <b>janela do browser</b>.</li>
+                    </ul>
+                    <p>Exemplo</p>
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+let x = myFunction();
+function myFunction() {
+    return <b>this</b>;
+}
+console.log(x); 
+
+//Será retornado <b>[object Window]</b>
+                        </code>
+                    </pre>
+                    <ul>
+                        <li>Invocar uma função como uma <b>global function</b> faz com que o valor de <code class="inlineCodeTag">this</code> seja o <b class="red">global object</b>. </li>
+                        <li>Usar o <code class="inlineCodeTag">window object</code> como uma variável pode facilmente travar o seu programa.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
 
-        <h2>Anonymous Function</h2>
-            São as funções que não possuem nenhum nome <br>
-            Funções armazenadas em variáveis não precisam de nomes, já que são sempre invocadas usando o próprio nome da variável. <br>
 
 
-        <h2>Function() Contructor</h2>
-            Funções também podem ser definidas com o construtor "Function()" <br>
-            Não é necessário o uso desse construtor <br>
-            ex: <br>
-            const myFunction = new Function("a", "b", "return a * b"); <br>
-            let x = myFunction(4, 3); <br>
-
-            ex: <br>
-            const myFunction = function (a, b) {return a * b}; <br>
-            let x = myFunction(4, 3); <br>
-
-
-
-
-
-
-        <h2>BIZU</h2>
-        <p>
-            • Funções podem ser usadas como valores e em expressões <br>
-                ex: <br>
-                    function myFunction(a, b) { <br>
-                    return a * b; <br>
-                    } <br>
-                    let x = myFunction(4, 3);	→Usada como valor <br>
-                    console.log(x);		→Será mostrado 12 no console <br>
-
-                ex: <br>
-                    function myFunction(a, b) { <br>
-                    return a * b; <br>
-                    } <br>
-                    let x = myFunction(4, 3) * 2;	→Usada como valor em uma expressão <br>
-                    console.log(x);		→Será mostrado 24 no console <br>
-        </p>
-
-        <h1>FUNCTION PARAMETERS / FUNCTION ARGUMENTS</h1>
-        <p>
-            ex: <br>
-            function functionName(parameter1, parameter2, parameter3){ <br>
-                // code to be executed <br>
-            } <br>
-        </p>
-
-
-        <h2>Parâmetros</h2>
-        <p>
-            São os nomes listados na declaração da função <br>
-            
-            <h3>Regras para Parâmetros</h3>
-                ∟JavaScript function definitions do not specify data types for parameters. <br>
-                ∟As funções JavaScript não verificam o tipo dos argumentos passados. <br>
-                ∟As funções JavaScript não verificam o número de argumentos recebidos. <br>
-
-            <h3>Parâmetros Padrão</h3>
-                Se uma função for chamada com argumentos faltando (menos do que declarado), os valores ausentes serão considerados como "undefined" <br>
-                Às vezes, isso é aceitável, mas normalmente é melhor atribuir um valor padrão ao parâmetro <br>
-                ex: <br>
-                    function myFunction(x, y) { <br>
-                    if (y === undefined) { <br>
-                        y = 2; <br>
-                    } <br>
-                    return x * y; <br>
-                    } <br>
-                    console.log( myFunction(4) );		//Função invocada com apenas 1 parâmetro, enquanto ela possui dois <br>
-        </p>
-
-        <h2>Argumentos</h2>
-        <p>
-            ∟São os verdadeiros valores passados e recebidos pela função <br>
-
-            ∟Arguments Object <br>
-                -As funções JavaScript têm um objeto interno denominado "arguments object" <br>
-                -O "argument object" contém um array dos argumentos usados quando a função foi invocada. <br>
-                -Se uma função for invocada com mais argumentos do que foram declarados, esses argumentos a mais podem ser alcançados através do "arguments object" <br>
-
-            ∟Os "argumentos" são passados por valor <br>
-                -Quando uma função for chamada, os parâmetros serão os argumentos dela <br>
-                -Os argumentos JavaScript são passados por valor: a função só conhece os valores e não a localização dos argumentos. <br>
-                -Se uma função altera o valor de um argumento o valor original do parâmetro não será alterado. <br>
-                -<b>Alterações nos argumentos NÃO são visíveis fora da função.</b> <br>
-
-            ∟Os "Objects" são passados por referência <br>
-                -No javascript, "Object References" são valores, por causa disso, objects vão se comportar como se fossem passados por referência <br>
-                -Se uma função altera o valor de uma propriedade do object, ela irá alterar o valor original <br>
-                -<b>Alterações nas propriedades do object SÃO visíveis fora da função</b> <br>
-        </p>
-
-        <h1>Palavra-chave THIS</h1>
-        <p>
-            No JavaScript todas as funções são métodos, que pertencem a algum objeto, caso não pertencam a um objeto específico, pertencerão ao objeto global (global object) <br>
-                ∟Nesse sentido, a palavra chave "this" se refere ao "dono" dessa função, ou seja, o objeto que é o proprietário da função <br>
-
-            O "this" quando usado em uma função irá representar o objeto que "possui" essa função. <br>
-                ∟"this" não é uma variável <br>
-                ∟"this" é uma palavra-chave, da qual você não pode mudar o valor <br>
-
-            When a function is called without an owner object, the value of "this" becomes the global object. <br>
-            Em um navegador da web, o global object é a janela do browser. <br>
-            ex: <br>
-                &#60body> <br>
-                    &#60script> <br>
-                        let x = myFunction(); <br>
-                        function myFunction() { <br>
-                        return this; <br>
-                        } <br>
-                        console.log(x);  //Retornará [object Window] <br>
-                    &#60/script> <br>
-                &#60/body> <br>
-
-
-            Invocar uma função como uma "global function" faz com que o valor de "this" seja o global object. <br>
-            Usar o window object como uma variável pode facilmente travar seu programa. <br>
-        </p>
 
         <h1>INVOCAÇÃO DE FUNÇÕES JAVASCRIPT</h1>
         <p>
