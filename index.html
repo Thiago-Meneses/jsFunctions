@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='eng'>
+<html lang='en'>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
@@ -7,9 +7,11 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+        
         <!-- myGlobalCSS -->
-        <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/myGlobalCSS.css">
+        <!-- <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/myGlobalCSS.css"> -->
+
+        <link rel="stylesheet" type="text/css" href="..\gitHubPages\Thiago-Meneses.github.io\myGlobalCSS.css">
 
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +19,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container-xxl px-4">
+        <div class="container-lg px-4">
             <h1 class="initialTitle">Funções em Javascript</h1>
             <p>
                 Funções são definidas pela palavra-chave "function" <br>
@@ -26,31 +28,34 @@
             <hr>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- PROPRIEDADES E METHODS -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4"><mark class="lineText">Propriedades e Métodos</mark></h1>
-                <div class="px-4 py-3">
-                    <p class="px-4 fs-4">• Funções possuem <b>propriedades</b> e <b>métodos</b>:</p><br>
-                    <div class="px-4 py-4">
-                        <h2 class="pb-4"><b class="red">Propriedades</b> de uma Função</h2>
-                        <p class="px-4 fs-4">• <b>Exemplo:</b> Propriedade <code class="inlineCodeTag">.length</code></p>
+                <h2 class="px-4"><mark class="lineText">Propriedades e Methods de uma Function</mark></h2>
+                <div class="px-5 py-3">
+                    <p class="px-4">• Functions possuem <b>propriedades</b> e <b>métodos</b>:</p><br>
+                    <div class="content">
+                        <h3 class="px-2"><mark class="lineText"><b class="red">Propriedades</b> de uma Function</mark></h3>
+                        <div class="innerBoundingLines"></div>
+                        <p class="px-4">• <b>Exemplo:</b> Propriedade <code class="inlineCodeTag">.length</code></p>
                         <div class="px-4">
                             <pre class="px-4 preTag fs-6">
                                 <code>
 function myFunction(a, b) {
-    return arguments<b>.length</b>;
+return arguments<b>.length</b>;
 }
 console.log(myFunction(4, 3)); //Será retornado "2" no console    
                                 </code>
                             </pre>
                         </div>
-                        <br><hr>
+                        <br>
                     </div>
-
-                    <div class="px-4 py-4">
-                        <h2 class="pb-4"><b class="red">Métodos</b> de uma Função</h2>
-                        <p class="px-4 fs-4">• <b>Exemplo:</b> Método <code class="inlineCodeTag">.toString()</code></p>
+                    
+                    <div class="content">
+                        <h3 class="px-2"><mark class="lineText"><b class="red">Methods</b> de uma Function</mark></h3>
+                        <div class="innerBoundingLines"></div>
+                        <p class="px-4">• <b>Exemplo:</b> Método <code class="inlineCodeTag">.toString()</code></p>
                         <div class="px-4">
                             <pre class="preTag px-4">
                                 <code>
@@ -66,128 +71,150 @@ console.log( myFunction.toString() );	//Irá retornar "function myFunction(a, b)
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- FUNCTION DECLARATION VS FUNCTION EXPRESSION -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4"><mark class="lineText">Declaration vs Expression</mark></h1>
+                <h2 class="px-4"><mark class="lineText">Declaration - Expression</mark></h2>
                 <div class="px-5 py-3">
-                    <h2 class="pb-4">Function <b class="red">Declaration</b></h2>
-                    <ul>
-                        <li>Funções declaradas <b>NÃO</b> são <b>executadas imediatamente</b>; </li>
-                        <li>São executadas apenas quando <b>invocadas</b>;</li>
-                        <li>Function Declarations não são <b>executable statements</b>, não é comum terminá-los com <code class="inlineCodeTag">;</code></li>
-                        <p>Exemplo:
-                    </ul>
+                    <div class="content">
+                        <div class="innerBoundingLines"></div>
+                        <h3 class="px-2"><mark class="lineText">Function <b class="gold">Declaration</b></mark></h3>
+                        <ul>
+                            <li>Funções declaradas <b>NÃO</b> são <b>executadas imediatamente</b>;</li>
+                            <li>Function Declarations são içadas (hoisted)</li>
+                            <li>São executadas apenas quando <b>invocadas</b>;</li>
+                            <li>Function Declarations não são <b>executable statements</b>, não é comum terminá-los com <code class="inlineCodeTag">;</code></li>
+                            <p>Exemplo:
+                        </ul>
                         <pre class="preTag px-4 fs-6">
                             <code>
 function functionName(parâmetros) {
-    ...
+...
 } //Sem uso de ;
                             </code>
                         </pre>
-                    <br><hr>
+                    </div>
                 </div>
+
                 <div class="px-5 py-3">
-                    <h2 class="pb-4">Function <b class="red">Expression</b></h2>
-                    <ul>
-                        <li>Uma function expression pode ser <b>armazenada</b> em uma <b>variável</b>;</li> 
-                        <li>A variável poderá ser <b>usada</b> como uma <b>função</b>;</li>
+                    <div class="content">
+                        <div class="innerBoundingLines"></div>
+                        <h3 class="px-2"><mark class="lineText">Function <b class="gold">Expression</b></mark></h3>
+                        <div class="px-4">
                             <ul>
-                                <li>A variável será usada para <b>invocar a função</b>;</li>
-                                <li>Por causa disso, a função não precisará de um nome para identificá-la;</li>
-                                <li>Uma função que não tem nome é chamada de <b>função anônima</b></li> 
+                                <li>Uma function expression pode ser <b>armazenada</b> em uma <b>variável</b>;</li> 
+                                <li>A variável poderá ser <b>usada</b> como uma <b>função</b>;</li>
+                                    <ul>
+                                        <li>A variável será usada para <b>invocar a função</b>;</li>
+                                        <li>Por causa disso, a função não precisará de um nome para identificá-la;</li>
+                                        <li>Uma função que não tem nome é chamada de <b>função anônima</b></li> 
+                                    </ul>
+                                </li>
+                                <li>Function Expressions terminam com <code class="inlineCodeTag">;</code> pois fazem parte de um "executable statement". (instrução executável)</li> 
+                                <li>Uma function expression sempre terá um <b>valor constante</b>.</li>
+                                    <ul><li>Portanto, usar "const" é mais seguro do que usar "var"</li></ul>
+                                <p>Exemplo:</p>
                             </ul>
-                        </li>
-                        <li>Function Expressions terminam com <code class="inlineCodeTag">;</code> pois fazem parte de um "executable statement". (instrução executável)</li> 
-                        <li>Uma function expression sempre terá um <b>valor constante</b>.</li>
-                            <ul><li>Portanto, usar "const" é mais seguro do que usar "var"</li></ul>
-                        <p>Exemplo:</p>
-                    </ul>
-                        <pre class="preTag px-4 fs-6">
-                            <code>
+                                <pre class="preTag px-4 fs-6">
+                                    <code>
 const a = function (x, y) {return x * y};
 let b = a(4, 3);
-                            </code>
-                        </pre>
-                    <h3>Self-Invoking Functions</h3>
-                    <ul>
-                        <li>Uma <b>Self Invoking Function</b> é <b>INVOCADA AUTOMATICAMENTE</b>, sem ser chamada.</li>
-                        <li><b>APENAS</b> <b class="red">Function Expressions</b> podem ser invocadas automaticamente</li>
-                        <li><b class="red">Function Declarations</b> <b>NÃO PODEM</b> ser invocadas automaticamente</li>
-                        <li>Precisa-se adicionar parênteses em volta da função para indicar que é uma "function expression"</li>
-                        <li>A função deve ser seguida de parênteses</li>
-                    </ul>
-                    <p>Exemplo: Anonymous Self-invoking Function </p>
-                    <pre class="preTag px-4 fs-6">
-                        <code>
+                                    </code>
+                                </pre>
+                            <div class="subHeader">
+                                <div class="solidLine"></div>
+                                <h4><mark class="lineText">Self-Invoking Functions</mark></h4>
+                            </div>
+                            
+                            <ul>
+                                <li>Uma <b>Self Invoking Function</b> é <b>INVOCADA AUTOMATICAMENTE</b>, sem ser chamada.</li>
+                                <li><b>APENAS</b> <b class="red">Function Expressions</b> podem ser invocadas automaticamente</li>
+                                <li><b class="red">Function Declarations</b> <b>NÃO PODEM</b> ser invocadas automaticamente</li>
+                                <li>Precisa-se adicionar parênteses em volta da função para indicar que é uma "function expression"</li>
+                                <li>A função deve ser seguida de parênteses</li>
+                            </ul>
+                            <p>Exemplo: Anonymous Self-invoking Function </p>
+                            <pre class="preTag px-4 fs-6">
+                                <code>
 <b>(</b>function () {
     let x = "Hello World !";
 }<b>)()</b>;
 
 //Note os parênteses envolvendo a função
 //Note os parênteses '()' após a função
-                        </code>
-                    </pre>
+                                </code>
+                            </pre>
 
-                    <h3>Funções Anônimas</h3>
-                    <ul>
-                        <li>São as funções que <b>não possuem nome</b>;</li>
-                        <li>Funções armazenadas em variáveis não precisam de nomes
-                            <ul><li>Serão sempre invocadas usando o próprio nome da variável.</li></ul>
-                        </li>
-                    </ul>
+                            <div class="subHeader">
+                                <div class="solidLine"></div>
+                                    <h4><mark class="lineText">Funções Anônimas</mark></h4>
+                            </div>
+                            <ul>
+                                <li>São as funções que <b>não possuem nome</b>;</li>
+                                <li>Funções armazenadas em variáveis não precisam de nomes
+                                    <ul><li>Serão sempre invocadas usando o próprio nome da variável.</li></ul>
+                                </li>
+                            </ul>
 
-                    <h3>Arrow Functions</h3>
-                    <ul>
-                        <li>Permitem uma sintaxe menor para escrever "function expressions" </li>
-                        <li>Não são necessários as palavras-chave FUNCTION, RETURN e as CHAVES </li>
-                    </ul>
-                    Exemplo: <b>Declaração Comum</b>
-                    <pre class="preTag px-4 fs-6">
-                        <code>
+                            <div class="subHeader">
+                                <div class="solidLine"></div>
+                                    <h4><mark class="lineText">Arrow Functions</mark></h4>
+                            </div>
+
+                            <ul>
+                                <li>Permitem uma sintaxe menor para escrever "function expressions" </li>
+                                <li>Não são necessários as palavras-chave FUNCTION, RETURN e as CHAVES </li>
+                            </ul>
+                            Exemplo: <b>Declaração Comum</b>
+                            <pre class="preTag px-4 fs-6">
+                                <code>
 var x = function(x, y) {
     return x * y;
 }
-                        </code>
-                    </pre>
-                    Exemplo: <b>Arrow Function</b>
-                    <pre class="preTag px-4 fs-6">
-                        <code>
+                                </code>
+                            </pre>
+                            Exemplo: <b>Arrow Function</b>
+                            <pre class="preTag px-4 fs-6">
+                                <code>
 const x = (x, y) => x * y;
-                        </code>
-                    </pre>
-                    <ul>
-                        <li>Arrow functions:</li>
-                        <ul>
-                            <li>Não têm <b>this</b>;</li>
-                            <li>Não são adequadas para definir <b>métodos de um objeto</b>;</li>
-                            <li>NOT HOISTED: <b>devem ser definidas antes de serem usadas</b>.</li>
-                        </ul>   
-                        <li>Quando a função for <b>single statement</b> ( tiver uma única instrução):
-                             <ul>
-                                <li>A palavra-chave <code class="inlineCodeTag">return</code> e <code class="inlineCodeTag">{ }</code> podem ser omitidas</li>
-                                <li>É uma boa prática usá-las sempre</li>
+                                </code>
+                            </pre>
+                            <ul>
+                                <li>Arrow functions:</li>
+                                <ul>
+                                    <li>Não têm <b>this</b>;</li>
+                                    <li>Não são adequadas para definir <b>métodos de um objeto</b>;</li>
+                                    <li>NOT HOISTED: <b>devem ser definidas antes de serem usadas</b>.</li>
+                                </ul>   
+                                <li>Quando a função for <b>single statement</b> ( tiver uma única instrução):
+                                    <ul>
+                                        <li>A palavra-chave <code class="inlineCodeTag">return</code> e <code class="inlineCodeTag">{ }</code> podem ser omitidas</li>
+                                        <li>É uma boa prática usá-las sempre</li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
-                    Exemplo:
-                    <pre class="preTag px-4 fs-6">
-                        <code>
+                            Exemplo:
+                            <pre class="preTag px-4 fs-6">
+                                <code>
 //return e { } omitidos
 const x = (x, y) => x * y;
 
 //Recomendado
 const x = (x, y) => { return x * y };
-                        </code>
-                    </pre>     
+                                </code>
+                            </pre>
+                        </div>
+                    </div>     
                 </div>
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- FUNCTION CONSTRUCTOR -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4"><mark class="lineText">Function() Contructor</mark></h1>
+                <h2 class="px-4"><mark class="lineText">Function( ) Contructor</mark></h2>
                 <div class="px-4 py-3">
 
                     <ul>
@@ -214,9 +241,10 @@ let x = myFunction(4, 3);
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
-                <h1 class="px-4 mb-5"><mark class="lineText">Bizu</mark></h1>
+        <!-- Bizu -->
+        <div class="container-lg">
+            <div class="content">
+                <h2 class="px-4 mb-5"><mark class="lineText"><b class="red">Bizu</b></mark></h2>
                 <div class="boundingLines"></div>
                 <div class="px-4">
                     <ul class="px-5">
@@ -255,14 +283,15 @@ console.log(x);
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- FUNCTION PARAMETERS / FUNCTION ARGUMENTS -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4 mb-5"><mark class="lineText">Function Parameters / Function Arguments</mark></h1>
+                <h2 class="px-4 mb-5"><mark class="lineText">Function Parameters / Function Arguments</mark></h2>
                 <div class="px-5">
                     <!-- FUNCTION PARAMETERS -->
                     <div class="subHeader">
-                        <h2><mark class="lineText">Function <b class="blue">Parameters</mark></b></h2>
+                        <h3><mark class="lineText">Function <b class="blue">Parameters</mark></b></h3>
                         <div class="solidLine"></div>
                     </div>
                     <div class="px-5">
@@ -284,7 +313,7 @@ function functionName(<b>parameter1, parameter2, parameter3</b>){
                                 </ul>
                             </li>
                         </ul>
-                        <h3>Default Parameter</h3>
+                        <h4>Default Parameter</h4>
                         <ul>
                             <li>Uma função pode ser chamada com <b>argumentos faltando</b> (menos do que foram declarados).</li>
                                 <ul>
@@ -313,7 +342,7 @@ console.log( <b>myFunction(4)</b> );
 
                     <!-- FUNCTION ARGUMENTS -->
                     <div class="subHeader">
-                        <h2 class="my-4"><mark class="lineText">Function <b class="blue">Arguments</b></mark></h2>
+                        <h3 class="my-4"><mark class="lineText">Function <b class="blue">Arguments</b></mark></h3>
                         <div class="solidLine"></div>
                     </div>
                     <div class="px-5">
@@ -321,7 +350,7 @@ console.log( <b>myFunction(4)</b> );
                             <li>São os <b>valores verdadeiros</b>;</li>
                             <li>São os valores que realmente são <b>passados</b> e <b>recebidos</b> pela função.</li>
                         </ul>
-                        <h3 class="my-5">O <code class="inlineCodeTag">Arguments</code> Object</h3>
+                        <h4 class="my-5">O <code class="inlineCodeTag">Arguments</code> Object</h4>
                         <ul>
                             <li><code class="inlineCodeTag">arguments</code> é um <b>Object</b>, muito semelhante a um <b>array</b>.
                                 <ul>
@@ -377,10 +406,11 @@ func1(1, 2, 3);
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- THIS KEYWORD -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4"><mark class="lineText">Palavra-chave <b class="gold">this</b></mark></h1>
+                <h2 class="px-4"><mark class="lineText">Palavra-chave <b class="gold">this</b></mark></h2>
                 <div class="px-5">
                     <ul>
                         <li>No JavaScript todas as funções são métodos, que pertencem a algum objeto</li>
@@ -418,10 +448,11 @@ console.log(x);
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- EVOKING FUNCTIONS IN JAVASCRIPT -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4"><mark class="lineText">Invocação de Funções no Javascript</mark></h1>
+                <h2 class="px-4"><mark class="lineText">Invocação de Funções no Javascript</mark></h2>
                 <div class="px-5">
                     <ul>
                         <li>O código dentro de uma função não é executado quando a função é definida, mas sim quando a função é <b>invocada</b>. </li>
@@ -451,7 +482,7 @@ console.log(y);
                     </ul>
             
                     <div class="subHeader">
-                        <h2 class="mt-5 mb-4"><mark class="lineText">Invocando Funções como um <b class="red">Method</b></mark></h2>
+                        <h3 class="mt-5 mb-4"><mark class="lineText">Invocando Functions como um <b class="red">Method</b></mark></h3>
                         <div class="solidLine"></div>
                     </div>
                     <ul>
@@ -485,7 +516,7 @@ console.log(x);		//John Doe
                     </ul>
             
                     <div class="subHeader">
-                        <h2 class="mt-5 mb-4"><mark class="lineText">Invocando Funções com um <b class="red">Function Constructor</b></mark></h2>
+                        <h3 class="mt-5 mb-4"><mark class="lineText">Invocando Funções com um <b class="red">Function Constructor</b></mark></h3>
                         <div class="solidLine"></div>
                     </div>
                     <ul>
@@ -503,10 +534,11 @@ console.log(x);		//John Doe
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- CALL METHOD -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4 my-5"><mark class="lineText"><strong class="gold">CALL( )</strong> Method</mark></h1>
+                <h2 class="px-4 my-5"><mark class="lineText"><strong class="gold">CALL( )</strong> Method</mark></h2>
                 <div class="px-5">
                     <ul>
                         <li><code class="inlineCodeTag">call()</code> é um method que já é <b>predefinido</b> pelo Javascript</li>
@@ -565,11 +597,11 @@ console.log(x) // John Doe, Contagem, Brasil
             </div>
         </div>
 	
-
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- APPLY METHOD -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4 my-4"><mark class="lineText"><strong class="gold">Apply( )</strong> Method</mark></h1>
+                <h2 class="px-4 my-4"><mark class="lineText"><strong class="gold">Apply( )</strong> Method</mark></h2>
                 <div class="px-5">
                     <ul>
                         <li><code class="inlineCodeTag">apply()</code> é <b>similar</b> ao método <code class="inlineCodeTag">call()</code></li>
@@ -614,7 +646,7 @@ document.getElementById("demo").innerHTML = person.fullName.apply(person1, ["Con
 
                     <div class="subHeader">
                         <div class="solidLine"></div>
-                        <h2 class="mt-5 mb-4"><mark class="lineText">Simular o <code class="inlineCodeTag">max()</code> method em arrays</mark></h2>
+                        <h3 class="mt-5 mb-4"><mark class="lineText">Simular o <code class="inlineCodeTag">max()</code> method em arrays</mark></h3>
                     </div>
                     <ul>
                         <li>Você pode encontrar o maior número de uma lista de números usando o method <code class="inlineCodeTag">Math.max()</code>: <br></li>
@@ -646,7 +678,7 @@ Math.max.apply(0, [1,2,3]);</code>
                     </pre>
                     <div class="subHeader">
                         <div class="solidLine"></div>
-                        <h2 class="mt-5 mb-4"><mark class="lineText">Javascript <b class="red">Strict Mode</b></mark></h2>
+                        <h3 class="mt-5 mb-4"><mark class="lineText">Javascript <b class="red">Strict Mode</b></mark></h3>
                     </div>
                     <ul>
                         <li>No <b>strict mode</b>:
@@ -660,10 +692,11 @@ Math.max.apply(0, [1,2,3]);</code>
             </div>
         </div>  
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <!-- SCOPE AND FUNCTION CLOSURES -->
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h1 class="px-4"><mark class="lineText">Escopo e <mark class="red">Function Closures</mark></h1>
+                <h2 class="px-4"><mark class="lineText">Escopo e <mark class="red">Function Closures</mark></h2>
                 <div class="px-5">
                     <ul>
                         <li>Uma função pode acessar todas as variáveis definidas dentro dela mesma </li>
@@ -677,52 +710,51 @@ function myFunction () {
 } 
                         </code>
                     </pre>
-                <ul>
-                    <li>Uma função também pode acessar variáveis definidas fora da função:</li>
-                    <li>Exemplo:</li>
-                </ul>
-                <pre class="preTag px-4 fs-6">
-                    <code>
-let a = 4;			//Nesse caso "a" é uma variável global
-function myFunction () {
-    return a * a;
-}
-                    </code>
-                </pre>
+                    <ul>
+                        <li>Uma função também pode acessar variáveis definidas fora da função:</li>
+                        <li>Exemplo:</li>
+                    </ul>
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+    let a = 4;			//Nesse caso "a" é uma variável global
+    function myFunction () {
+        return a * a;
+    }
+                        </code>
+                    </pre>
 
-                <div class="subHeader">
-                    <div class="solidLine"></div>
-                    <h4 class="mt-5"><mark class="lineText">Variável <strong class="blue">Global</strong></mark></h4>
-                </div>
-                <ul>
-                    <li>São acessíveis a <b>todos</b> os escopos;</li>
-                    <li>Variáveis globais podem ser transformadas em variáveis locais (privadas), usando <b>closures</b>;</li>
-                    <li>Variáveis criadas <b>sem palavra-chave</b> (var, let ou const) <b>sempre</b> serão globais, mesmo se forem criadas dentro de uma função;</li>
-                    <li>Exemplo:</li>
-                </ul>
-                <pre class="preTag px-4 fs-6">
-                    <code>
-function myFunction() {
-    a = 4;
-}
+                    <div class="subHeader">
+                        <div class="solidLine"></div>
+                        <h3 class="mt-5"><mark class="lineText">Variável <strong class="blue">Global</strong></mark></h3>
+                    </div>
+                    <ul>
+                        <li>São acessíveis a <b>todos</b> os escopos;</li>
+                        <li>Variáveis globais podem ser transformadas em variáveis locais (privadas), usando <b>closures</b>;</li>
+                        <li>Variáveis criadas <b>sem palavra-chave</b> (var, let ou const) <b>sempre</b> serão globais, mesmo se forem criadas dentro de uma função;</li>
+                        <li>Exemplo:</li>
+                    </ul>
+                    <pre class="preTag px-4 fs-6">
+                        <code>
+    function myFunction() {
+        a = 4;
+    }
 
-//Será considerada uma variável global
-                    </code>
-                </pre>
+    //Será considerada uma variável global
+                        </code>
+                    </pre>
 
-                <div class="subHeader">
-                    <div class="solidLine"></div>
-                    <h4 class="mt-5"><mark class="lineText">Variável <strong class="blue">Local</strong></mark></h4>
-                </div>
-                <ul>
-                    <li>Só pode ser usada <b>dentro</b> da função onde está definida.</li>
-                    <li>Variáveis globais e locais com o <b>mesmo nome</b> são consideradas como <b>variáveis diferentes</b>.
-                        <ul><li>Modificar uma variável não irá alterar a outra.</li></ul>
-                    </li>
-                </ul><br><hr><br>
+                    <div class="subHeader">
+                        <div class="solidLine"></div>
+                        <h3 class="mt-5"><mark class="lineText">Variável <strong class="blue">Local</strong></mark></h3>
+                    </div>
+                    <ul>
+                        <li>Só pode ser usada <b>dentro</b> da função onde está definida.</li>
+                        <li>Variáveis globais e locais com o <b>mesmo nome</b> são consideradas como <b>variáveis diferentes</b>.
+                            <ul><li>Modificar uma variável não irá alterar a outra.</li></ul>
+                        </li>
+                    </ul><br><hr><br>
     
-                <div>
-                    <h2>Tempo de vida das variáveis</h2>
+                    <h3>Tempo de vida das variáveis</h3>
                     <ul>
                         <li>Variáveis <b class="red">globais</b> :
                             <ul>
@@ -742,60 +774,89 @@ function myFunction() {
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="bd-content">
+        <div class="container-lg">
+            <div class="content">
                 <div class="boundingLines"></div>
-                <h2 class="px-4 mt-5    mb-4"><mark class="lineText">Um Problema do Contador</mark></h2>
+                <h2 class="px-4 mt-5 mb-4"><mark class="lineText"><b class="gold">Closures</b></h2>
                 <div class="px-5">
-                    <p>
-                        Suponha que você queira usar uma variável para contar algo e que esse contador esteja disponível para todas as funções do programa: <br><br>
-                        Você pode usar uma <b>variável global</b> e uma <b>função</b> para aumentar o contador <br>
-                        Exemplo: <br>
-                        <img src="1.jpg">
-                        O problema com essa solução é que qualquer código introduzido na página pode alterar o contador, <b>sem chamar</b> o add(). <br>
-                    </p>
-                    <p>
-                        O contador deve ser local para a função add(), para prevenir que outros códigos possam alterá-lo: <br>
-                        <img src="2.jpg">
-                        Não funcionou pois exibimos o contador global, e não o contador local. <br>
-                    </p>
-                    <p>
-                        Podemos remover o contador global e acessar o contador local, permitindo que agora a função retorn o contador local: <br>
-                        <img src="2.jpg">
-                        Não funcionou pois o contador local está sendo <b>zerado</b> toda vez que a função é chamada. <br>
-                    </p>
-                    <p>Uma <strong class="gold">Inner Function</strong> do JavaScript pode resolver isso<br></p>
-                    <br><hr><br>
-                    <h2>Nested Functions</h2>
-                    <ul>
-                        <li><b>Todas</b> funções têm acesso ao <b>escopo global</b>.</li>
-                            <ul><li>Mais detalhadamente, em JavaScript, todas as funções terão acesso a todos os escopos que estão diretamente "acima" delas (Acesso a todos os escopos que as contêm). </li></ul>
-                    </ul>
-                    <ul>
-                        <li>O JavaScript oferece suporte a <strong>nested functions</strong>.
-                            <ul><li>As nested functions têm acesso aos escopos que estão "acima" delas. <br></li></ul>
-                    </ul>
-                        <p>Exemplo: A função interna <code class="inlineCodeTag">plus()</code> tem acesso a variável do contador na <b>parent function</b></p>
-                        <pre class="preTag px-4 fs-6">
-                            <code>
-        document.getElementById("demo").innerHTML = add();
-        function add() { //Parent Function
-            let counter = 0;
-            function <b>plus()</b> {
-                counter += 1;
-            }
-            plus();  
-            return counter; 
-        }
-                            </code>
-                        </pre>
-                    <ul>
-                        <li>Isso poderia ter resolvido o problema do contador, se pudéssemos alcançar a função plus() de fora.</li>
-                        <li>Também precisamos encontrar uma maneira de executar o counter = 0 apenas uma vez.</li>
-                        <li>Para isso será necessário uma "closure"</li>
-                    </ul>
-                    <br><hr><br>
-                    <h2>Javascript Closures</h2>
+                    <div>
+                        <div class="subHeader">
+                            <div class="solidLine"></div>
+                            <h3><mark class="lineText">Entendendo Closures</mark></h3>
+                        </div>
+                        <p>
+                            A forma mais didática de se entender o funcionamento das Closures é criando uma analogia<br>
+                            Iremos usar o ambiente de uma certa empresa para criar essa analogia.<br>
+                        </p>
+                        <p>
+                            Imagine que essa empresa seja dividida em várias partes, cada parte tem o seu papel.<br>
+                            O conjunto de todas as partes permite o funcionamento da empresa.<br>
+                        </p>
+                        <p>
+                            Imagine que essa empresa é formada por diversos escritórios, em conjunto eles permitem o funcionamento da empresa<br>
+                            Para trabalhar nesses escritórios a empresa precisa de funcionários, que devem seguir regras bem específicas.<br>
+                        </p>
+                        <p>
+                            Cada funcionário tem seu próprio escritório onde ele pode trabalhar e realizar suas tarefas normalmente.<br>
+                            A grande diferença é que, nessa empresa, um funcionário só pode entrar em seu próprio escritório, não tendo a permissão de entrar nos escritórios de outros funcionários.<br>
+                            Os escritórios fazem parte da empresa, contudo são privados e não podem ser acessados livremente<br>
+                            Em uma situação do mundo real essa regra não faria muito sentido, mas como analogia será útil para entender o funcionamento das Closures<br>
+                        </p>
+                        <p>
+                            Os funcionários podem andar pela empresa livremente, só não podem entrar nos escritórios dos outros funcionários<br>
+
+                            Cada funcionário realiza algum trabalho dentro de seu escritório, o conjunto de todos esses escritórios permite com que a empresa funcione<br>
+                            Trazendo essa analogia para o código, cada function realiza seus próprios "trabalhos" e o conjunto de todas as functions permite com que o programa funcione<br>
+                        </p>
+                        <p>
+
+                            Além dos escritórios, existem outros locais locais e atividades dentro da empresa, localizados fora dos escritórios, que também são essenciais para o funcionamento da empresa, e que todos os funcionários podem acessar<br>
+                            De mesma maneira, em um código, as functions não são as únicas partes que compôem o código, também existem outras seções fora das functions que são essenciais para o programa funcionar<br>
+                        </p>
+
+                        <p>
+                            Cada funcionário possui suas próprias ferramentas e trabalhos dentro do seu próprio escritório, e os trabalhos e ferramentas que existem dentro de outros escritórios não podem ser acessados diretamente <br>
+                        </p>
+
+                        <p>
+                            Caso um funcionário precise de dos dados de outro escritório, ele deve "chamar" o funcionário que trabalhe nesse escritório, para que esse sim lhe forneça os dados necessários<br>
+                        </p>
+                        <p>
+                            No contexto de programação, as ferramentas e processos seriam as variáveis e methods localizadas dentro da function(escritório) e que não podem ser acessados de fora, por um escopo exterior<br>
+
+                            Os funcionários estão representando as closures, ou seja, as functions internas que estão dentro de uma function externa ( closures dentro de uma função externa)<br>
+                        </p>
+                        <p>
+                            Os funcionários(closures) possuem acesso apenas as variáveis e declarações localizados dentro do seu próprio escritório ( escopo da function exterior )<br>
+
+                            Um funcionário é o único meio pelo qual se é possível ter acesso aos valores e dados de um determinado escritório<br>
+                        </p>
+                        <p>
+                            Da mesma maneira, em programação, uma closure é a única forma de se obter os valores localizados dentro de uma function, as closures se responsabilizam por "retornar" os valores para o local onde foram chamadas<br>
+
+                            O funcionário que pediu as informações não possui o acesso direto às variáveis e methods definidos dentro da function exterior(escritório), essa function e todos as suas variáveis e declarações são PRIVADAS, apenas o funcionário que foi chamado ( closure ) e que trabalha dentro desse escritório possui acesso, servindo como ponte para acessar esses dados.<br>
+                        </p>
+                            
+                        <p>
+                            A empresa em si é a analogia para o global scope, onde além dos escritórios, também existem outros locais que podem ser acessados pelos funcionários.<br>
+                            Os escritórios representam as functions que contêm dentro de si as suas variáveis privadas e as closures(funcionários), que permitem o acesso as essas variáveis.<br>
+                        </p>
+
+                        <p>
+                            Outros locais como os corredores, banheiros, lanchonetes, salas, etc representam as variáveis e methods declarados no global scope, ou seja, podem ser acessados por todos os funcionários<br>
+                            O global scope é basicamente o ambiente "público" por onde todos podem trafegar<br>
+
+                            Como exemplo, uma cafeteira na lanchonete pode ser usada por todos os funcionários, portanto sempre há um risco dela ser quebrada ou estragada por algum funcionário mais desastrado ou que tenha más intenções<br>
+                            Da mesma maneira, em programação, variáveis e methods localizados no global scope podem ser alterados por qualquer pessoa, tanto sem querer ou de forma maliciosa.<br>
+                        </p>
+                        <p>
+                            O uso das closures permite com que existam variáveis e declarações privadas dentro de um código, que não podem ser acessadas livremente<br>
+                            Só o próprio funcionário tem acesso aos trabalhos realizados dentro do seu escritório<br>
+                            O funcionário é a parte "móvel" da escritório, que pode levar os trabalhos feitos lá dentro para outros lugares e outros funcionários, algo que o escritório em si não pode fazer<br>
+                            Um determinado escritório pode conter uma impressora que imprime um determinado documento, impressora essa que não pode ser usada por qualquer pessoa, caso outro funcionário precise do documento, ele não pode entrar no escritória para usá-la diretamente, ele deve então pedir para o funcionário responsável pelo escritório fazer isso por ele e "retornar" o documento.
+                        </p>
+                    </div>
+                    
                     <p>
                         Closures permitem que funções tenha variáveis <b>"privadas"</b> <br>
                         Exemplo:
@@ -831,5 +892,64 @@ function myFunction(){
                 </div>
             </div>
         </div>
+
+        <div class="container-lg">
+            <div class="content">
+                <div class="boundingLines"></div>
+                <h2 class="px-4 mt-5 mb-4"><mark class="lineText">Um Problema do Contador</mark></h2>
+                <div class="px-5">
+                    <p>
+                        Suponha que você queira usar uma variável para contar algo e que esse contador esteja disponível para todas as funções do programa: <br><br>
+                        Você pode usar uma <b>variável global</b> e uma <b>função</b> para aumentar o contador <br>
+                        Exemplo: <br>
+                        <!-- <img src="1.jpg"> -->
+                        O problema com essa solução é que qualquer código introduzido na página pode alterar o contador, <b>sem chamar</b> o add(). <br>
+                    </p>
+                    <p>
+                        O contador deve ser local para a função add(), para prevenir que outros códigos possam alterá-lo: <br>
+                        <!-- <img src="2.jpg"> -->
+                        Não funcionou pois exibimos o contador global, e não o contador local. <br>
+                    </p>
+                    <p>
+                        Podemos remover o contador global e acessar o contador local, permitindo que agora a função retorn o contador local: <br>
+                        <!-- <img src="2.jpg"> -->
+                        Não funcionou pois o contador local está sendo <b>zerado</b> toda vez que a função é chamada. <br>
+                    </p>
+                    <p>Uma <strong class="gold">Inner Function</strong> do JavaScript pode resolver isso<br></p>
+                    <br><hr><br>
+                    <h3>Nested Functions</h3>
+                    <ul>
+                        <li><b>Todas</b> funções têm acesso ao <b>escopo global</b>.</li>
+                            <ul><li>Mais detalhadamente, em JavaScript, todas as funções terão acesso a todos os escopos que estão diretamente "acima" delas (Acesso a todos os escopos que as contêm). </li></ul>
+                    </ul>
+                    <ul>
+                        <li>O JavaScript oferece suporte a <strong>nested functions</strong>.
+                            <ul><li>As nested functions têm acesso aos escopos que estão "acima" delas. <br></li></ul>
+                    </ul>
+                        <p>Exemplo: A função interna <code class="inlineCodeTag">plus()</code> tem acesso a variável do contador na <b>parent function</b></p>
+                        <pre class="preTag px-4 fs-6">
+                            <code>
+        document.getElementById("demo").innerHTML = add();
+        function add() { //Parent Function
+            let counter = 0;
+            function <b>plus()</b> {
+                counter += 1;
+            }
+            plus();  
+            return counter; 
+        }
+                            </code>
+                        </pre>
+                    <ul>
+                        <li>Isso poderia ter resolvido o problema do contador, se pudéssemos alcançar a função plus() de fora.</li>
+                        <li>Também precisamos encontrar uma maneira de executar o counter = 0 apenas uma vez.</li>
+                        <li>Para isso será necessário uma "closure"</li>
+                    </ul>
+                    <br><hr><br>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>
