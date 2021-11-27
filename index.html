@@ -9,9 +9,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         
         <!-- myGlobalCSS -->
-        <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/myGlobalCSS.css">
+        <!-- <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/myGlobalCSS.css"> -->
 
-        <!-- <link rel="stylesheet" type="text/css" href="..\gitHubPages\Thiago-Meneses.github.io\myGlobalCSS.css"> -->
+        <link rel="stylesheet" type="text/css" href="..\gitHubPages\Thiago-Meneses.github.io\myGlobalCSS.css">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
 
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,20 +35,24 @@
 
         <!-- PROPRIEDADES E METHODS -->
         <div class="container-lg">
-            <div class="content">
+            <div class="content oloko">
                 <div class="boundingLines"></div>
-                <h2 class="px-4"><mark class="lineText">Propriedades e Methods de uma Function</mark></h2>
-                <div class="px-5 py-3">
-                    <p class="px-4">• Functions possuem <b>propriedades</b> e <b>métodos</b>:</p><br>
+                <div class="px-5 pb-3">
+                    <h2><mark class="lineText">Propriedades e Methods de uma Function</mark></h2>
                     <div class="content">
-                        <h3 class="px-2"><mark class="lineText"><b class="red">Propriedades</b> de uma Function</mark></h3>
+                        <h3 class="px-2"><mark class="lineText"><b class="gold">Propriedades</b> de uma Function</mark></h3>
                         <div class="innerBoundingLines"></div>
-                        <p class="px-4">• <b>Exemplo:</b> Propriedade <code class="inlineCodeTag">.length</code></p>
-                        <div class="px-4">
-                            <pre class="px-4 preTag fs-6">
+                        <div class="px-5">
+                            <p>
+                                Functions possuem <b>propriedades</b>.<br>
+                            </p>
+                            <p class="mb-05em">
+                                <b>Exemplo</b> com a propriedade <code class="inlineCode">.length</code>:
+                            </p>
+                            <pre class="px-4 preTag">
                                 <code>
 function myFunction(a, b) {
-return arguments<b>.length</b>;
+    return arguments<b>.length</b>;
 }
 console.log(myFunction(4, 3)); //Será retornado "2" no console    
                                 </code>
@@ -53,18 +62,25 @@ console.log(myFunction(4, 3)); //Será retornado "2" no console
                     </div>
                     
                     <div class="content">
-                        <h3 class="px-2"><mark class="lineText"><b class="red">Methods</b> de uma Function</mark></h3>
+                        <h3 class="px-2"><mark class="lineText"><b class="gold">Methods</b> de uma Function</mark></h3>
                         <div class="innerBoundingLines"></div>
-                        <p class="px-4">• <b>Exemplo:</b> Método <code class="inlineCodeTag">.toString()</code></p>
-                        <div class="px-4">
-                            <pre class="preTag px-4">
-                                <code>
+                        <div class="px-5">
+                            <p>
+                                Functions também possuem <b>methods</b>.
+                            </p>
+                            <p class="mb-05em">
+                                <b>Exemplo</b> com o method <code class="inlineCode">.toString()</code>
+                            </p>
+                            <div>
+                                <pre class="preTag px-4">
+                                    <code>
 function myFunction(a, b) {
-return a * b;
+    return a * b;
 }
 console.log( myFunction.toString() );	//Irá retornar "function myFunction(a, b) { return a * b; }" no console
-                                </code>
-                            </pre>
+                                    </code>
+                                </pre>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,27 +92,39 @@ console.log( myFunction.toString() );	//Irá retornar "function myFunction(a, b)
             <div class="content">
                 <div class="boundingLines"></div>
                 <h2 class="px-4"><mark class="lineText">Declaration - Expression</mark></h2>
+                <!-- FUNCTION DECLARATIONS -->
                 <div class="px-5 py-3">
                     <div class="content">
                         <div class="innerBoundingLines"></div>
                         <h3 class="px-2"><mark class="lineText">Function <b class="gold">Declaration</b></mark></h3>
-                        <ul>
-                            <li>Funções declaradas <b>NÃO</b> são <b>executadas imediatamente</b>;</li>
-                            <li>Function Declarations são içadas (hoisted)</li>
-                            <li>São executadas apenas quando <b>invocadas</b>;</li>
-                            <li>Function Declarations não são <b>executable statements</b>, não é comum terminá-los com <code class="inlineCodeTag">;</code></li>
-                            <p>Exemplo:
-                        </ul>
-                        <pre class="preTag px-4 fs-6">
-                            <code>
+                        <div class="px-4">
+                            <ul>
+                                <li>É a forma mais comum, normalmente pela qual se aprende a definir uma function pela primeira vez</li>
+                                <li>Também recebe o nome de Function Statement</li>
+                                <li>Funções declaradas <b>NÃO</b> são <b>executadas imediatamente</b>;</li>
+                                <li>Function Declarations são içadas (hoisted)</li>
+                                <li>São executadas apenas quando <b>invocadas</b>;</li>
+                                <li>Function Declarations não são <b>executable statements</b>, não é comum terminá-los com <code class="inlineCode">;</code></li>
+                            </ul>
+                            <p>
+                                Exemplo:
+                            </p>
+                            <pre class="preTag px-4">
+                                <code>
+//Sem o uso de ponto e vírgula
+
 function functionName(parâmetros) {
-...
-} //Sem uso de ;
-                            </code>
-                        </pre>
+    console.log("Hello world");
+}
+
+functionName(); //Chamando uma function declaration
+                                </code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
 
+                <!-- FUNCTION EXPRESSION -->
                 <div class="px-5 py-3">
                     <div class="content">
                         <div class="innerBoundingLines"></div>
@@ -104,104 +132,180 @@ function functionName(parâmetros) {
                         <div class="px-4">
                             <ul>
                                 <li>Uma function expression pode ser <b>armazenada</b> em uma <b>variável</b>;</li> 
-                                <li>A variável poderá ser <b>usada</b> como uma <b>função</b>;</li>
-                                    <ul>
+                                <li>A variável em que a function foi armazenada poderá ela mesma ser <b>usada</b> como uma <b>function</b>;</li>
+                                    <ul class="innerUl">
                                         <li>A variável será usada para <b>invocar a função</b>;</li>
                                         <li>Por causa disso, a função não precisará de um nome para identificá-la;</li>
                                         <li>Uma função que não tem nome é chamada de <b>função anônima</b></li> 
                                     </ul>
                                 </li>
-                                <li>Function Expressions terminam com <code class="inlineCodeTag">;</code> pois fazem parte de um "executable statement". (instrução executável)</li> 
+                                <li>Function Expressions terminam com <code class="inlineCode">;</code> pois fazem parte de um "executable statement". (instrução executável)</li> 
                                 <li>Uma function expression sempre terá um <b>valor constante</b>.</li>
-                                    <ul><li>Portanto, usar "const" é mais seguro do que usar "var"</li></ul>
-                                <p>Exemplo:</p>
-                            </ul>
-                                <pre class="preTag px-4 fs-6">
-                                    <code>
-const a = function (x, y) {return x * y};
-let b = a(4, 3);
-                                    </code>
-                                </pre>
-                            <div class="subHeader">
-                                <div class="solidLine"></div>
-                                <h4><mark class="lineText">Self-Invoking Functions</mark></h4>
-                            </div>
-                            
-                            <ul>
-                                <li>Uma <b>Self Invoking Function</b> é <b>INVOCADA AUTOMATICAMENTE</b>, sem ser chamada.</li>
-                                <li><b>APENAS</b> <b class="red">Function Expressions</b> podem ser invocadas automaticamente</li>
-                                <li><b class="red">Function Declarations</b> <b>NÃO PODEM</b> ser invocadas automaticamente</li>
-                                <li>Precisa-se adicionar parênteses em volta da função para indicar que é uma "function expression"</li>
-                                <li>A função deve ser seguida de parênteses</li>
-                            </ul>
-                            <p>Exemplo: Anonymous Self-invoking Function </p>
-                            <pre class="preTag px-4 fs-6">
-                                <code>
-<b>(</b>function () {
-    let x = "Hello World !";
-}<b>)()</b>;
-
-//Note os parênteses envolvendo a função
-//Note os parênteses '()' após a função
-                                </code>
-                            </pre>
-
-                            <div class="subHeader">
-                                <div class="solidLine"></div>
-                                    <h4><mark class="lineText">Funções Anônimas</mark></h4>
-                            </div>
-                            <ul>
-                                <li>São as funções que <b>não possuem nome</b>;</li>
-                                <li>Funções armazenadas em variáveis não precisam de nomes
-                                    <ul><li>Serão sempre invocadas usando o próprio nome da variável.</li></ul>
+                                    <ul class="innerUl"><li>Portanto, usar "const" é mais seguro do que usar "var"</li></ul>
+                                <li>Function Expressions não são içadas (hoisted)
+                                    <ul class="innerUl"><li>Apenas a variável que recebe a function expression é em si içada, mas a própria function não vai ser.</li></ul>
                                 </li>
                             </ul>
-
-                            <div class="subHeader">
-                                <div class="solidLine"></div>
-                                    <h4><mark class="lineText">Arrow Functions</mark></h4>
-                            </div>
-
-                            <ul>
-                                <li>Permitem uma sintaxe menor para escrever "function expressions" </li>
-                                <li>Não são necessários as palavras-chave FUNCTION, RETURN e as CHAVES </li>
-                            </ul>
-                            Exemplo: <b>Declaração Comum</b>
-                            <pre class="preTag px-4 fs-6">
+                            <p>
+                                <b>Exemplo</b> de Function Expression:
+                            </p>
+                            <pre class="preTag px-4">
                                 <code>
-var x = function(x, y) {
-    return x * y;
+const a = function (x, y) {return x * y};
+let b = a(4, 3);
+                                </code>
+                            </pre>
+                            <p>
+                                <b>Exemplo</b> de uma Function Expression nomeada:
+                            </p>
+                            <pre class="preTag px-4">
+                                <code>
+//Qualquer nome pode ser dado para a function, mas recomenda-se usar o mesmo nome dado a variável, por organização
+var <b>nomeVar</b> = function <b>nomeFunction()</b>{
+    console.log('Hello world');
+}
+
+//Modo recomendado
+var <b>nomeVar</b> = function <b>nomeVar()</b>{
+    console.log('Hello world');
 }
                                 </code>
                             </pre>
-                            Exemplo: <b>Arrow Function</b>
-                            <pre class="preTag px-4 fs-6">
+                            <div class="subHeader">
+                                <div class="solidLine"></div>
+                                <h4><mark class="lineText"><b class="blue">Self-Invoking Functions</b></mark></h4>
+                            </div>
+                            
+                            <ul>
+                                <li>São as functions invocadas <b>automaticamente</b>, sem precisar de serem chamadas;</li>
+                                <li>Apenas <b class="red">Function Expressions</b> podem ser invocadas automaticamente;</li>
+                                <li>Function Declarations <b>NÃO podem</b> ser invocadas automaticamente;</li>
+                                <li>Adiciona-se <code class="inlineCode">( )</code> <b>em volta</b> da function e <b>após</b> ela, para indicá-la como uma <b>function expression</b>;</li>
+                            </ul>
+                            <p class="mb-05em"><b>Exemplo:</b> Anonymous Self-invoking Function </p>
+                            <pre class="preTag px-4">
                                 <code>
-const x = (x, y) => x * y;
+<span class="bold">(</span><span class="grey">function () {
+    let x = "Hello World !";
+}</span><b>)()</b>;
                                 </code>
                             </pre>
+
+                            <div class="subHeader">
+                                <div class="solidLine"></div>
+                                    <h4 class="px-4"><mark class="lineText"><b class="blue">Anonymous Functions</b></mark></h4>
+                            </div>
                             <ul>
-                                <li>Arrow functions:</li>
-                                <ul>
-                                    <li>Não têm <b>this</b>;</li>
-                                    <li>Não são adequadas para definir <b>métodos de um objeto</b>;</li>
-                                    <li>NOT HOISTED: <b>devem ser definidas antes de serem usadas</b>.</li>
-                                </ul>   
-                                <li>Quando a função for <b>single statement</b> ( tiver uma única instrução):
-                                    <ul>
-                                        <li>A palavra-chave <code class="inlineCodeTag">return</code> e <code class="inlineCodeTag">{ }</code> podem ser omitidas</li>
-                                        <li>É uma boa prática usá-las sempre</li>
+                                <li>São as functions que <b>não possuem nome</b>;</li>
+                                <li>Functions são armazenadas em variáveis <b>NÃO</b> precisam de nomes
+                                    <ul class="innerUl"><li>Serão sempre invocadas usando o próprio nome da variável.</li></ul>
+                                </li>
+                            </ul>
+
+                            <div class="subHeader">
+                                <div class="solidLine"></div>
+                                    <h4 class="px-4"><mark class="lineText"><b class="blue">Arrow Functions</b></mark></h4>
+                            </div>
+                            <div class="px-5">
+                            </div>
+
+                            <ul>
+                                <li>Arrow Functions <b>sempre</b> serão <b>function expressions</b>, e nunca function declarations
+                                    <ul class="innerUl"><li>Arrow functions permitem uma sintaxe menor para escrever function expressions</li></ul>
+                                </li>
+                                <li>Não são necessários os termos:
+                                    <ul class="innerUl">
+                                        <li><code class="inlineCode"><b>function</b></code></li>
+                                        <li><code class="inlineCode"><b>return</b></code> - Quando a function não ter mais de uma linha</li>
+                                        <li><code class="inlineCode"><b>{ }</b></code> - Quando a function não ter mais de uma linha</li>
+                                        <li><code class="inlineCode"><b>( )</b></code> - Quando só haja 1 parâmetro</li>
                                     </ul>
                                 </li>
                             </ul>
-                            Exemplo:
-                            <pre class="preTag px-4 fs-6">
-                                <code>
-//return e { } omitidos
-const x = (x, y) => x * y;
 
-//Recomendado
-const x = (x, y) => { return x * y };
+                            <ul>
+                                <li>Caracterísitcas
+                                    <ul class="innerUl">
+                                        <li>Não possuem <b>this</b>;</li>
+                                        <li>Não são adequadas para definir <b>Object Methods</b>;</li>
+                                        <li>Não são içadas, devem ser <b>definidas antes de serem usadas</b>. ( not hoisted )</li>
+                                    </ul>   
+                                </li>
+                            </ul>
+
+                            <h5 class="px-3">Transformando declarações comuns em arrow functions</h5>
+                            <ol>
+                                <li class="mb-05em">A palavra-chave <code class="inlineCode">function</code> não é usada:</li>
+                                <pre class="preTag px-4">
+                                    <code>
+let myVar = <span class="weak">function</span>(data) {
+    return "Hello World" + data;
+}
+</code>
+                                </pre>
+                                <pre class="preTag px-4 mb-3em">
+                                    <code>
+let myVar = (data) {
+    return "Hello World" + data;
+}
+                                    </code>
+                                </pre>
+
+                                <li class="mb-05em">Removendo <code class="inlineCode">{ }</code> e <code class="inlineCode">return</code>, apenas quando a function for <b>single statement</b>:</li>
+                                <pre class="preTag px-4">
+                                    <code>
+let myVar = (data) <span class="weak">{ return </span> "Hello World" + data; <span class="weak">}</span>
+                                    </code>
+                                </pre>
+                                <pre class="preTag px-4 mb-3em">
+                                    <code>
+let myVar = (data) "Hello World" + data;
+
+//Mesmo opcionais é uma boa prática usá-los sempre
+                                    </code>
+                                </pre>
+
+                                <li class="mb-05em">Adicionando a Arrow Function <code class="inlineCode">=></code></li>
+                                <pre class="preTag px-4 mb-3em">
+                                    <code>
+let myVar = (data) => "Hello World" + data;
+                                    </code>
+                                </pre>
+
+                                <li>Com um único parâmetro, os parênteses podem ser removidos</li>
+                                <pre class="preTag px-4 mb-3em">
+                                    <code>
+let myVar = data => "Hello World" + data;
+                                    </code>
+                                </pre>
+                            </ol>
+
+                            <p class="mb-05em"><b>Exemplo 1:</b> Adicionando um valor aos elementos de um array</p>
+                            <pre class="preTag px-4">
+                                <code>
+<span class="grey">let array = [1,2,3,4,5];
+
+//Arrow Function
+let array2 = array.map</span><span class="bold">(v => v + 2)</span><span class="grey">,
+
+//Declaração comum
+let array3 = array.map(</span><span class="bold">function(v) { return v + 2; }</span><span class="grey">);
+
+console.log(array2); //[3,4,5,6,7]
+console.log(array3); //[3,4,5,6,7]</span>
+                                </code>
+                            </pre>
+
+                            <p class="mb-05em"><b>Exemplo 2:</b> Arrow Function com mais de uma linha e mais de um parâmetro:</p>
+                            <pre class="preTag px-4">
+                                <code>
+let greeting = (time, name) => {
+    if (time === "day") return "Morning " + name;
+    if (time === "night") return "Evening " + name;
+}
+
+let greet = greeting("day", "Steve");
+console.log(greet); // Morning Steve
                                 </code>
                             </pre>
                         </div>
@@ -218,7 +322,7 @@ const x = (x, y) => { return x * y };
                 <div class="px-4 py-3">
 
                     <ul>
-                        <li>Funções também podem ser definidas com o construtor <code class="inlineCodeTag">Function()</code> </li>
+                        <li>Funções também podem ser definidas com o construtor <code class="inlineCode">Function()</code> </li>
                         <li> O uso desse construtor é <b>opcional</b></li>
                     </ul>
                     Exemplo:
@@ -252,7 +356,7 @@ let x = myFunction(4, 3);
                         <li>Exemplo como <b>valor</b>:</li>
                     </ul>
                     <div class="px-5">
-                    <pre class="preTag ps-4 fs-6">
+                    <pre class="preTag ps-4">
                         <code>
 function myFunction(a, b) {
     return a * b;
@@ -267,7 +371,7 @@ console.log(x);
                     <ul>
                         <li>Exemplo em uma <b>expressão</b>:</li>
                     </ul>
-                    <pre class="preTag ps-4 fs-6">
+                    <pre class="preTag ps-4">
                         <code>
 function myFunction(a, b) {
     return a * b;
@@ -296,7 +400,7 @@ console.log(x);
                     </div>
                     <div class="px-5">
                         <p>Exemplo:</p>
-                        <pre class="preTag px-4 fs-6">
+                        <pre class="preTag px-4">
                             <code>
 function functionName(<b>parameter1, parameter2, parameter3</b>){
     ...
@@ -317,14 +421,14 @@ function functionName(<b>parameter1, parameter2, parameter3</b>){
                         <ul>
                             <li>Uma função pode ser chamada com <b>argumentos faltando</b> (menos do que foram declarados).</li>
                                 <ul>
-                                    <li>Os valores ausentes serão considerados como <code class="inlineCodeTag">undefined</code>;</li>
+                                    <li>Os valores ausentes serão considerados como <code class="inlineCode">undefined</code>;</li>
                                     <li>Existem casos em que isso pode ser aceitável;</li>
                                     <li>Contudo, no geral se <b>atribui</b> um valor <b>default</b> (predefinido) ao parameter.</li>
                                 </ul>
                             </li>
                             <li>Exemplo:</li>
                         </ul>
-                        <pre class="preTag px-4 fs-6">
+                        <pre class="preTag px-4">
                             <code>
 function <b>myFunction(x, y)</b> {
 if (y === undefined) { //Atribui o valor 2 como default a 'y', quando este for 'undefined'
@@ -350,20 +454,20 @@ console.log( <b>myFunction(4)</b> );
                             <li>São os <b>valores verdadeiros</b>;</li>
                             <li>São os valores que realmente são <b>passados</b> e <b>recebidos</b> pela função.</li>
                         </ul>
-                        <h4 class="my-5">O <code class="inlineCodeTag">Arguments</code> Object</h4>
+                        <h4 class="my-5">O <code class="inlineCode">Arguments</code> Object</h4>
                         <ul>
-                            <li><code class="inlineCodeTag">arguments</code> é um <b>Object</b>, muito semelhante a um <b>array</b>.
+                            <li><code class="inlineCode">arguments</code> é um <b>Object</b>, muito semelhante a um <b>array</b>.
                                 <ul>
                                     <li>É um object interno das funções do Javascript;</li>
                                     <li>Ele pode ser acessado dentro das funções;</li>
                                     <li>Ele contêm os valores dos arguments passados para a função.</li>
                                     <li>Uma função pode ser invocada com mais arguments do que foram declarados inicialmente</li>
-                                        <ul><li>Esses arguments "a mais" podem ser alcançados com o <code class="inlineCodeTag">arguments</code> object" </li></ul>
+                                        <ul><li>Esses arguments "a mais" podem ser alcançados com o <code class="inlineCode">arguments</code> object" </li></ul>
                                 </ul>
                             </li>
                             <li>Exemplo:</li>
                         </ul>
-                        <pre class="preTag px-4 fs-6">
+                        <pre class="preTag px-4">
                             <code>
 function func1(a, b, c) {
     console.log(<b>arguments[0]</b>);
@@ -381,7 +485,7 @@ func1(1, 2, 3);
                         </pre>
                         <ul>
                             <li>
-                                Os <code class="inlineCodeTag">Arguments</code> são passados por <b>valor</b>
+                                Os <code class="inlineCode">Arguments</code> são passados por <b>valor</b>
                                 <ul>
                                     <li>Quando uma função for chamada, os parameters serão os argument dela </li>
                                     <li>Os JavaScript Arguments são passados por valor: a função só conhece os valores e não a localização dos arguments.</li>    
@@ -393,7 +497,7 @@ func1(1, 2, 3);
                         </ul>
                         <ul>
                             <li>
-                                Os <code class="inlineCodeTag">Objects</code> são passados por <b>referência</b>
+                                Os <code class="inlineCode">Objects</code> são passados por <b>referência</b>
                                 <ul>
                                     <li>No javascript, <b>Object References</b> são valores, por causa disso, Objects vão se comportar como se fossem passados por referência</li>
                                     <li>Se uma função altera o valor de uma propriedade do object, ela também vai alterar o valor original</li>
@@ -417,8 +521,8 @@ func1(1, 2, 3);
                         <li>As funções que não pertencem a um objeto específico, pertencem ao objeto global (global object)</li>    
                     </ul>
                     <ul>
-                        <li>Nesse sentido, <code class="inlineCodeTag">this</code> se refere ao <b>"dono"</b> dessa função, ou seja, o objeto que é o <b>proprietário</b> da função.
-                        <li>Propriedades do <code class="inlineCodeTag">this</code>:
+                        <li>Nesse sentido, <code class="inlineCode">this</code> se refere ao <b>"dono"</b> dessa função, ou seja, o objeto que é o <b>proprietário</b> da função.
+                        <li>Propriedades do <code class="inlineCode">this</code>:
                             <ul>
                                 <li>Quando usado em uma função, representa o <b>object</b> que <b>possui</b> essa função;</li>
                                 <li>É uma palavra-chave, a qual <b>não</b> pode ter o seu <b>valor alterado</b>;</li>
@@ -429,7 +533,7 @@ func1(1, 2, 3);
                         <li>Em um navegador da web, o global object é a <b>janela do browser</b>.</li>
                     </ul>
                     <p>Exemplo</p>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 let x = myFunction();
 function myFunction() {
@@ -441,8 +545,8 @@ console.log(x);
                         </code>
                     </pre>
                     <ul>
-                        <li>Invocar uma função como uma <b>global function</b> faz com que o valor de <code class="inlineCodeTag">this</code> seja o <b class="red">global object</b>. </li>
-                        <li>Usar o <code class="inlineCodeTag">window object</code> como uma variável pode facilmente travar o seu programa.</li>
+                        <li>Invocar uma função como uma <b>global function</b> faz com que o valor de <code class="inlineCode">this</code> seja o <b class="red">global object</b>. </li>
+                        <li>Usar o <code class="inlineCode">window object</code> como uma variável pode facilmente travar o seu programa.</li>
                     </ul>
                 </div>
             </div>
@@ -460,7 +564,7 @@ console.log(x);
                         <li>Será usado o termo <b>invocar</b>, pois uma função pode ser <b>invocada SEM ser chamada</b>. </li>
                         <li>Exemplo:</li>
                     </ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 function myFunction(a, b) { 
     return a * b; 
@@ -478,7 +582,7 @@ console.log(y);
                                 <li>O <b>global object</b> padrão é a própria <b>página HTML</b>, portanto, a função acima pertence à página HTML.</li>
                             </ul>
                         <li>In a browser the page object is the browser window. The function above automatically becomes a window function.</li>
-                        <li><code class="inlineCodeTag">myFunction()</code>  e <code class="inlineCodeTag">window.myFunction()</code> são a mesma função</li>
+                        <li><code class="inlineCode">myFunction()</code>  e <code class="inlineCode">window.myFunction()</code> são a mesma função</li>
                     </ul>
             
                     <div class="subHeader">
@@ -487,9 +591,9 @@ console.log(y);
                     </div>
                     <ul>
                         <li>No JavaScript, funções podem ser definidas como sendo <b class="red">Methods</b> de um object. </li>
-                        <li>Exemplo: Criar um object, com as propriedades <code class="inlineCodeTag">firstName</code> e <code class="inlineCodeTag">lastName</code> e um method <code class="inlineCodeTag">fullName</code></li>
+                        <li>Exemplo: Criar um object, com as propriedades <code class="inlineCode">firstName</code> e <code class="inlineCode">lastName</code> e um method <code class="inlineCode">fullName</code></li>
                     </ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 const myObject = { 
     firstName:"John", 
@@ -503,14 +607,14 @@ console.log(x);		//John Doe
                         </code>
                     </pre>
                     <ul>
-                        <li>O method <code class="inlineCodeTag">fullName</code> é uma função.
+                        <li>O method <code class="inlineCode">fullName</code> é uma função.
                             <ul>
-                                <li>A função pertence ao object <code class="inlineCodeTag">myObject</code></li>
-                                <li><code class="inlineCodeTag">myObject</code> é o "proprietário" da função.</li>
+                                <li>A função pertence ao object <code class="inlineCode">myObject</code></li>
+                                <li><code class="inlineCode">myObject</code> é o "proprietário" da função.</li>
                             </ul>
                         </li>
                         <li>A palavra-chave <b>this</b> se refere ao objeto que <b>possui</b> o código
-                            <ul><li>Nesse caso, this terá o valor de <code class="inlineCodeTag">myObject</code></li></ul>
+                            <ul><li>Nesse caso, this terá o valor de <code class="inlineCode">myObject</code></li></ul>
                         </li>
                         <li>Invocar uma função como um method de um object faz com que o valor de <b>this</b> seja o próprio <b>object</b> onde a função foi invocada.</li>
                     </ul>
@@ -520,15 +624,27 @@ console.log(x);		//John Doe
                         <div class="solidLine"></div>
                     </div>
                     <ul>
-                        <li>Quando uma função for invocada e for <b>precedida</b> pela palavra <code class="inlineCodeTag">new</code>, essa será uma <strong class="gold">constructor invocation</strong></li>
+                        <li>Quando uma função for invocada e for <b>precedida</b> pela palavra <code class="inlineCode">new</code>, essa será uma <strong class="gold">constructor invocation</strong></li>
                         <li>No Javascript, <b>funções</b> são <b>objects</b>
                             <ul><li>Mesmo parecendo que uma nova função está sendo criada, na realidade é um objeto que está sendo criado.</li></ul>
                         </li>
                         <li>Uma <b>constructor invocation</b> cria um novo <b>object</b>
                             <ul><li>Esse novo object herda as propriedades e métodos do seu construtor.</li></ul>
                         </li>
-                        <li>A palavra-chave <code class="inlineCodeTag">this</code> no construtor <b>não</b> possui um valor.</li>
-                        <li>O valor de <code class="inlineCodeTag">this</code> será o novo object criado quando a função for chamada. </li>
+                        <li>A palavra-chave <code class="inlineCode">this</code> no construtor <b>não</b> possui um valor.</li>
+                        <li>O valor de <code class="inlineCode">this</code> será o novo object criado quando a função for chamada. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-lg">
+            <div class="content">
+                <div class="boundingLines"></div>
+                <h2 class="px-4"><mark class="lineText"><b class="gold">Callback</b> Functions</mark></h2>
+                <div class="px-5">
+                    <ul>
+
                     </ul>
                 </div>
             </div>
@@ -541,11 +657,11 @@ console.log(x);		//John Doe
                 <h2 class="px-4 my-5"><mark class="lineText"><strong class="gold">CALL( )</strong> Method</mark></h2>
                 <div class="px-5">
                     <ul>
-                        <li><code class="inlineCodeTag">call()</code> é um method que já é <b>predefinido</b> pelo Javascript</li>
+                        <li><code class="inlineCode">call()</code> é um method que já é <b>predefinido</b> pelo Javascript</li>
                         <li>Pode ser usado para invocar uma função (method)
                             <ul><li>Um <b>owner object</b> é usado como argument.</li></ul>
                         </li>
-                        <li>Com o <code class="inlineCodeTag">call()</code> um object pode usar <b>methods</b> pertencentes a <b>outro object</b></li>
+                        <li>Com o <code class="inlineCode">call()</code> um object pode usar <b>methods</b> pertencentes a <b>outro object</b></li>
                         <li>Exemplo:</li>
                     </ul>
                     <pre class="preTag px-4">
@@ -569,7 +685,7 @@ console.log(x);
                         </code>
                     </pre>
                     <ul>
-                        <li><code class="inlineCodeTag">call()</code> aceita <b>arguments</b></li>
+                        <li><code class="inlineCode">call()</code> aceita <b>arguments</b></li>
                         <li>Exemplo:</li>
                     </ul>
                     <pre class="preTag px-4">
@@ -604,17 +720,17 @@ console.log(x) // John Doe, Contagem, Brasil
                 <h2 class="px-4 my-4"><mark class="lineText"><strong class="gold">Apply( )</strong> Method</mark></h2>
                 <div class="px-5">
                     <ul>
-                        <li><code class="inlineCodeTag">apply()</code> é <b>similar</b> ao método <code class="inlineCodeTag">call()</code></li>
+                        <li><code class="inlineCode">apply()</code> é <b>similar</b> ao método <code class="inlineCode">call()</code></li>
                         <li>A <b>grande diferença</b> está no fato de que:
                             <ul>
-                                <li><code class="inlineCodeTag">call()</code> aceita os argumentos <b class="red">SEPARADAMENTE</b>;</li>
-                                <li><code class="inlineCodeTag">apply()</code> aceita os argumentos como um <b class="red">ARRAY</b></li>
+                                <li><code class="inlineCode">call()</code> aceita os argumentos <b class="red">SEPARADAMENTE</b>;</li>
+                                <li><code class="inlineCode">apply()</code> aceita os argumentos como um <b class="red">ARRAY</b></li>
                             </ul>
                         </li>
                     </ul>
                     
                         ex: método call() <br>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 const person = {
     fullName: function(city, country) {
@@ -629,7 +745,7 @@ document.getElementById("demo").innerHTML = person.fullName.apply(person1, "Cont
                         </code>
                     </pre>
                     <ul><li>Exemplo: método apply() </li></ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 const person = {
     fullName: function(city, country) {
@@ -646,14 +762,14 @@ document.getElementById("demo").innerHTML = person.fullName.apply(person1, ["Con
 
                     <div class="subHeader">
                         <div class="solidLine"></div>
-                        <h3 class="mt-5 mb-4"><mark class="lineText">Simular o <code class="inlineCodeTag">max()</code> method em arrays</mark></h3>
+                        <h3 class="mt-5 mb-4"><mark class="lineText">Simular o <code class="inlineCode">max()</code> method em arrays</mark></h3>
                     </div>
                     <ul>
-                        <li>Você pode encontrar o maior número de uma lista de números usando o method <code class="inlineCodeTag">Math.max()</code>: <br></li>
+                        <li>Você pode encontrar o maior número de uma lista de números usando o method <code class="inlineCode">Math.max()</code>: <br></li>
                         <li>Os arrays JavaScript <b>não</b> têm um method <b>max()</b></li>
                         <li>Exemplo:</li>
                     </ul>                 
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 document.getElementById("demo").innerHTML = Math.max.apply(null, [1,2,3]);
 
@@ -664,15 +780,15 @@ document.getElementById("demo").innerHTML = Math.max.apply(null, [1,2,3]);
                         <li>O primeiro argumento (null) não é usado nesse caso, sendo assim irrelevante</li>
                         <li>Também pode ser escrito como:</li>
                     </ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 Math.max.apply(Math, [1,2,3]);</code>
                     </pre>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 Math.max.apply(" ", [1,2,3]);</code>
                     </pre>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 Math.max.apply(0, [1,2,3]);</code>
                     </pre>
@@ -682,7 +798,7 @@ Math.max.apply(0, [1,2,3]);</code>
                     </div>
                     <ul>
                         <li>No <b>strict mode</b>:
-                            <ul><li>Se o primeiro argument do <code class="inlineCodeTag">apply()</code> não for um object, o method <code class="inlineCodeTag">apply()</code> se tornará o <b>proprietário</b> (objeto) da função invocada.</li></ul>
+                            <ul><li>Se o primeiro argument do <code class="inlineCode">apply()</code> não for um object, o method <code class="inlineCode">apply()</code> se tornará o <b>proprietário</b> (objeto) da função invocada.</li></ul>
                         </li>
                         <li>No <b>non-strict mode</b>:
                             <ul><li>O <b>global object</b> se torna o <b>proprietário</b> da função</li></ul>
@@ -702,7 +818,7 @@ Math.max.apply(0, [1,2,3]);</code>
                         <li>Uma função pode acessar todas as variáveis definidas dentro dela mesma </li>
                         <li>Exemplo:</li>
                     </ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 function myFunction () {    
     let a = 4;		//Nesse caso "a" é uma variável local
@@ -714,7 +830,7 @@ function myFunction () {
                         <li>Uma função também pode acessar variáveis definidas fora da função:</li>
                         <li>Exemplo:</li>
                     </ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
     let a = 4;			//Nesse caso "a" é uma variável global
     function myFunction () {
@@ -733,7 +849,7 @@ function myFunction () {
                         <li>Variáveis criadas <b>sem palavra-chave</b> (var, let ou const) <b>sempre</b> serão globais, mesmo se forem criadas dentro de uma função;</li>
                         <li>Exemplo:</li>
                     </ul>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
     function myFunction() {
         a = 4;
@@ -774,6 +890,7 @@ function myFunction () {
             </div>
         </div>
 
+        <!-- CLOSURES -->
         <div class="container-lg">
             <div class="content">
                 <div class="boundingLines"></div>
@@ -856,12 +973,14 @@ function myFunction () {
                             Um determinado escritório pode conter uma impressora que imprime um determinado documento, impressora essa que não pode ser usada por qualquer pessoa, caso outro funcionário precise do documento, ele não pode entrar no escritória para usá-la diretamente, ele deve então pedir para o funcionário responsável pelo escritório fazer isso por ele e "retornar" o documento.
                         </p>
                     </div>
-                    
+                    <br>
+                    <hr>
+                    <br>
                     <p>
                         Closures permitem que funções tenha variáveis <b>"privadas"</b> <br>
                         Exemplo:
                     </p>
-                    <pre class="preTag px-4 fs-6">
+                    <pre class="preTag px-4">
                         <code>
 const add = (function () {
     let counter = 0;
@@ -874,21 +993,51 @@ function myFunction(){
                         </code>
                     </pre>
                     <ul>
-                        <li>A variável <code class="inlineCodeTag">add()</code> é atribuída ao valor de retorno de uma <b>self-invoking function</b>.
+                        <li>A variável <code class="inlineCode">add()</code> é atribuída ao valor de retorno de uma <b>self-invoking function</b>.
                             <ul>
                                 <li>A <b>self-invoking function</b> é executada apenas <b>UMA vez</b>.</li>
                                 <li>Ela define o contador para <b>zero</b> e retorna uma <b>function expression</b>.</li>
                             </ul>
                         </li>
                         
-                        <li>Desta forma, <code class="inlineCodeTag">add</code> torna-se uma <b>função</b>.
+                        <li>Desta forma, <code class="inlineCode">add</code> torna-se uma <b>função</b>.
                             <ul>
                                 <li>O benefício é que ela pode acessar o <b>contador</b> no <b>parent scope</b>.</li>
                                 <li>Isso é chamado de <b>Javascript Closure</b>. </li>
-                                <li>O contador é <b>protegido</b> pelo <b>escopo da função anônima</b> e só pode ser <b>alterado</b> usando-se a função <code class="inlineCodeTag">add()</code>.</li>
+                                <li>O contador é <b>protegido</b> pelo <b>escopo da função anônima</b> e só pode ser <b>alterado</b> usando-se a função <code class="inlineCode">add()</code>.</li>
                             </ul>
                         </li>
                     </ul>
+                    <br>
+                    <hr>
+                    <br>
+                    <p>
+                        <b>variableName</b><br>
+                        Apenas o nome da variável, sem parênteses, irá mostrar apenas o próprio código que foi passado para a variável<br>
+                    </p>
+                    <p>
+                        <b>variableName()</b><br>
+                        O nome da variável, com parênteses no final, irá executar a function que foi atribuída à variável.
+                    </p>
+                    <p>
+                        <b>Exemplo:</b>
+                    </p>
+                    <pre class="preTag px-4">
+                        <code>
+function person() {
+    let name = 'Peter';
+    return function displayName() {
+        console.log(name);
+    };
+}
+
+
+let variableName = person();
+variableName();                 //WILL RETURN "Peter"
+console.log(variableName());    /*WILL RETURN "Peter" AND "undefined", the former linked to the line where the console.log was written and the latter linked to the line where the command itself was written */
+console.log(variableName);      //WILL RETURN THE WHOLE FUNCTION THAT HAS BEEN ASSIGNED TO "variableName"
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
@@ -926,8 +1075,8 @@ function myFunction(){
                         <li>O JavaScript oferece suporte a <strong>nested functions</strong>.
                             <ul><li>As nested functions têm acesso aos escopos que estão "acima" delas. <br></li></ul>
                     </ul>
-                        <p>Exemplo: A função interna <code class="inlineCodeTag">plus()</code> tem acesso a variável do contador na <b>parent function</b></p>
-                        <pre class="preTag px-4 fs-6">
+                        <p>Exemplo: A função interna <code class="inlineCode">plus()</code> tem acesso a variável do contador na <b>parent function</b></p>
+                        <pre class="preTag px-4">
                             <code>
         document.getElementById("demo").innerHTML = add();
         function add() { //Parent Function
